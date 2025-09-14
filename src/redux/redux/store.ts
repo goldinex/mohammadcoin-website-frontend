@@ -2,12 +2,10 @@ import { configureStore } from '@reduxjs/toolkit';
 import { apiSlice } from './apiSlice';
 import { verifyApi } from './api/verifyApiSlice';
 import { userApi } from './services/userApi';
-import userReducer from './slices/userSlice';
 import { goldPriceApi } from './services/goldPriceApi';
 
 export const store = configureStore({
   reducer: {
-    user: userReducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
     [verifyApi.reducerPath]: verifyApi.reducer,
     [userApi.reducerPath]: userApi.reducer,

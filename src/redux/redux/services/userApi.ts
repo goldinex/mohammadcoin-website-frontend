@@ -40,7 +40,7 @@ export const userApi = createApi({
             setUser({
               ...userData,
               asset: assetData,
-              wallet: walletData,
+              
             })
           );
         } catch (error) {
