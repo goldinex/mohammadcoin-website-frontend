@@ -4,10 +4,13 @@
 @import './fonts.css';
 
 :root {
-  --background: #fff;
+  --background: #fffffb;
   --foreground: #171717;
   --text: #000;
   direction: rtl;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 .wallet-with-bg::after {

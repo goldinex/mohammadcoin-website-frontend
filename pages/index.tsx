@@ -10,14 +10,21 @@ import WhyUs from '@/components/reusable/WhyUs';
 export default function Home() {
   return (
     <div>
-      <LandingPage />
+      <div className='p-0 bg-[linear-gradient(to_bottom,rgba(245,202,44,0.29)_0%,rgba(255,210,0,0)_100%)]'>
+        <Navbar />
+        <LandingPage />
+      </div>{' '}
       <BuySell />
-      <Table />
+      <div id='pricesTable'>
+        <Table />
+      </div>
       <Card />
       <Banner />
       <Guid />
       <WhyUs />
-      <Faq />
+      <div id='faq'>
+        <Faq />
+      </div>
     </div>
   );
 }

@@ -30,7 +30,7 @@ export default function GoldCarousel() {
   const scrollItems = [...coins, ...coins, ...coins];
 
   return (
-    <div className='overflow-hidden mb-4 w-[96%] mx-auto h-[40px] bg-primary-100 rounded-lg relative'>
+    <div className='overflow-hidden mb-4 w-full lg:w-[96%] mx-auto py-1 lg:py-4 items-center bg-primary-210 rounded-none lg:rounded-[14px] relative'>
       <div
         className='flex animate-scroll whitespace-nowrap'
         style={{ gap: '2rem' }}
@@ -57,10 +57,10 @@ export default function GoldCarousel() {
 
         @keyframes scroll {
           0% {
-            transform: translateX(-66.66%);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(0);
+            transform: translateX(33.33%);
           }
         }
       `}</style>

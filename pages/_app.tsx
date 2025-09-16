@@ -6,21 +6,32 @@ import { AuthProvider } from '@/src/contexts/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import Navbar from '@/components/reusable/Navbar';
 import Footer from '@/components/reusable/Footer';
+import { useRouter } from 'next/router';
+import Head from 'next/head';
+
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const isHome = router.pathname === '/';
+
   const withLayout = (
-    <div className='w-full h-[100dvh] flex bg-white'>
-      <div className='flex-1 h-[100dvh] overflow-y-auto'>
-        <Navbar/>
-        <main className='p-4 md:px-8 '>
+    <div className="w-full min-h-[100dvh] flex bg-white">
+      <div className="flex-1 min-h-[100dvh] overflow-y-auto">
+        {!isHome && <Navbar />}
+        <main className={isHome ? '' : 'p-4 md:px-8'}>
           <Component {...pageProps} />
         </main>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
 
   return (
     <Provider store={store}>
+      <Head>
+        <link rel="icon" href="/favicon.svg" />
+        <title>سکه محمد</title>
+      </Head>
+
       <Toaster
         toastOptions={{
           duration: 4000,
@@ -45,6 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
           },
         }}
       />
+
       <AuthProvider>{withLayout}</AuthProvider>
     </Provider>
   );
