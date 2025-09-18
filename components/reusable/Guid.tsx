@@ -10,7 +10,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className='py-16'>
+    <section className='py-1 lg:py-16'>
       <p className='text-[8px] lg:text-[18px] px-4 lg:px-36 mb-5'>
         در دنیای امروز، خرید و فروش طلا و سکه دیگر محدود به روش‌های سنتی نیست.
         با پیشرفت تکنولوژی، امکان خرید سکه طلا آنلاین به ساده‌ترین شکل ممکن

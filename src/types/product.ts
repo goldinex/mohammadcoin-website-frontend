@@ -11,3 +11,11 @@ export interface Product {
   latest_sell_price: number;
   shamsi_updated_at: string | null;
 }
+
+
+
+export type PricePoint = {
+  buy_price: number;
+  sell_price: number;
+  shamsi_date: string;
+};

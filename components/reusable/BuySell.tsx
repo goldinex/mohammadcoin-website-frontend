@@ -105,10 +105,10 @@ export default function CoinExchange() {
           </div>
         </div>
 
-        <div className='bg-secondary-300 rounded-2xl shadow-md p-5 md:p-6'>
+        <div className='bg-secondary-300 rounded-2xl shadow-md p-5 lg:p-6'>
           <form
             onSubmit={handleSubmit}
-            className='flex flex-col md:flex-row gap-4 md:gap-6 items-stretch'
+            className='flex flex-col lg:flex-row gap-4 lg:gap-6 items-stretch'
           >
             <div className='flex-1 min-w-[260px]'>
               <div className='text-xs text-gray-700 mb-2'>
@@ -174,7 +174,7 @@ export default function CoinExchange() {
               </div>
             </div>
 
-            <div className='lg:w-[136px] w-full flex justify-center lg:items-end'>
+            <div className='lg:w-[15%] w-full flex items-end justify-center '>
               <button
                 type='submit'
                 onClick={() =>
@@ -182,7 +182,7 @@ export default function CoinExchange() {
                     `/order?mode=${mode}&coin=${coinType}&qty=${quantity}&amount=${amount}`
                   )
                 }
-                className={`w-full whitespace-nowrap  py-3 text-sm font-medium shadow-sm transition rounded-[16px] text-white 
+                className={`lg:w-full h-[44px]  w-[40%] whitespace-nowrap py-3 text-sm font-medium shadow-sm transition rounded-[16px] text-white 
     ${
       mode === 'buy'
         ? 'bg-success-400 hover:bg-[#118554]'

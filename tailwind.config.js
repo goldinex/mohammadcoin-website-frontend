@@ -1,4 +1,3 @@
-// tailwind.config.js
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -8,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+      },
+      animation: {
+        float: 'float 4s ease-in-out infinite',
+      },
       backgroundImage: {
         'green-gradient': 'linear-gradient(125deg, #946613 0%, #E2A631 100%)'
       },
@@ -15,7 +23,7 @@ module.exports = {
         primary: {
           '100': '#FAF6CF',
           '200': '#E8DDA4',
-          '210' : '#E8DDA4',
+          '210': '#E8DDA4',
           '300': '#E6CE71',
           '400': '#EDEAE7',
           '500': '#C58112',

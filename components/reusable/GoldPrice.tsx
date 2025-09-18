@@ -21,8 +21,8 @@ export default function GoldCarousel() {
     pollingInterval: 30000,
   });
 
-  if (isLoading) return <p>{cartText.loading}</p>;
-  if (error) return <p>{cartText.err}</p>;
+  if (isLoading) return <p className='text-center'>{cartText.loading}</p>;
+  if (error) return <p className='text-center'>{cartText.err}</p>;
 
   const coins = productsData.filter((p: Product) =>
     coinNames.includes(p.name_fa)

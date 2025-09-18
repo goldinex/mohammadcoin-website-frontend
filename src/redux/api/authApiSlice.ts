@@ -1,5 +1,5 @@
 import { apiSlice } from '@/src/redux/apiSlice';
-import { Product } from '@/src/types/product';
+import { Product, PricePoint } from '@/src/types/product';
 export const authApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     register: builder.mutation<
@@ -21,10 +21,24 @@ export const authApi = apiSlice.injectEndpoints({
         method: 'GET',
       }),
     }),
+    getProducts2: builder.query<Product[], void>({
+      query: () => ({
+        url: '/product/all2',
+        method: 'GET',
+      }),
+    }),
+    getTimeseries: builder.query<PricePoint[], string>({
+      query: (productId) => ({
+        url: `/product/timeseries/${productId}`,
+        method: 'GET',
+      }),
+    }),
   }),
 });
 
 export const {
   useRegisterMutation,
   useGetProductsQuery,
+  useGetProducts2Query,
+  useGetTimeseriesQuery,
 } = authApi;
