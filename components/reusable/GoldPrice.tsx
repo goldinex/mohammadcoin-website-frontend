@@ -21,8 +21,8 @@ export default function GoldCarousel() {
     pollingInterval: 30000,
   });
 
-  if (isLoading) return <p className='text-center'>{cartText.loading}</p>;
-  if (error) return <p className='text-center'>{cartText.err}</p>;
+  if (isLoading) return <p>{cartText.loading}</p>;
+  if (error) return <p>{cartText.err}</p>;
 
   const coins = productsData.filter((p: Product) =>
     coinNames.includes(p.name_fa)
@@ -30,7 +30,7 @@ export default function GoldCarousel() {
   const scrollItems = [...coins, ...coins, ...coins];
 
   return (
-    <div className='overflow-hidden mb-4 w-full lg:w-[96%] mx-auto py-1 lg:py-4 items-center bg-primary-210 rounded-none lg:rounded-[14px] relative'>
+    <div className='overflow-hidden mb-4 w-full lg:w-[95%] mx-auto h-[40px] lg:h-[68px] bg-primary-210 rounded-none lg:rounded-[16px] flex items-center relative'>
       <div
         className='flex animate-scroll whitespace-nowrap'
         style={{ gap: '2rem' }}
@@ -57,10 +57,10 @@ export default function GoldCarousel() {
 
         @keyframes scroll {
           0% {
-            transform: translateX(0);
+            transform: translateX(-66.66%);
           }
           100% {
-            transform: translateX(33.33%);
+            transform: translateX(0);
           }
         }
       `}</style>
