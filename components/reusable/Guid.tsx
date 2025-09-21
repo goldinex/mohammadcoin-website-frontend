@@ -19,7 +19,7 @@ export default function HowItWorks() {
         کنید.
       </p>
       <div className=' flex flex-col md:flex-row items-center gap-12 px-4 lg:px-28'>
-        <div className='w-full'>
+        <div className='w-[55%]'>
           <h2 className='text-[13px] lg:text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-right'>
             فرآیند آسان خرید سکه , پارسیان و انواع شمش{' '}
           </h2>
@@ -34,7 +34,7 @@ export default function HowItWorks() {
           </ul>
         </div>
 
-        <div className='flex-1  justify-center hidden lg:flex'>
+        <div className=' justify-center hidden lg:flex'>
           <Image
             src='/img/iPhone.svg'
             alt='موکاپ موبایل'
