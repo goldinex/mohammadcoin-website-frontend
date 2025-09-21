@@ -31,8 +31,8 @@ export default function Footer() {
         <div className='grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-right'>
           <div className='lg:block hidden'>
             <div className='text-sm font-medium   text-secondary-800 mb-3'>
-              <span className='border-b w-5 h-2 border-[#000]'></span>
               همراه با سکه محمد
+              <span className=' w-5 h-2 rounded-[7px] border-[#000]'></span>
             </div>
             <ul className='space-y-3 text-[13px] text-secondary-800'>
               <li>راهنما</li>
@@ -69,11 +69,20 @@ export default function Footer() {
             <div className='text-xs text-secondary-800 mb-3'>
               اعتماد شما سرمایه ماست
             </div>
-            {/* <div className="flex items-center gap-4">
-              <img src="/img/zarinpal.png" alt="زرین‌پال" />
-              <img src="/img/namad.png" alt="نماد اعتماد" />
-            </div> */}
-            {/* <div className="text-[11px] text-secondary-800 mt-2">برای اعتبار سنجی کلیک نمایید</div> */}
+            <div className='flex items-center gap-4'>
+              <a
+                referrerPolicy='origin'
+                target='_blank'
+                href='https://trustseal.enamad.ir/?id=648055&Code=vrk1eUGrbNSBdm8dxyFpo23UYCi280B7'
+              >
+                <img
+                  referrerPolicy='origin'
+                  src='https://trustseal.enamad.ir/logo.aspx?id=648055&Code=vrk1eUGrbNSBdm8dxyFpo23UYCi280B7'
+                  alt='نماد اعتماد الکترونیکی'
+                  style={{ cursor: 'pointer' }}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
