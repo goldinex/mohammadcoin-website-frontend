@@ -19,7 +19,7 @@ export default function HowItWorks() {
         کنید.
       </p>
       <div className=' flex flex-col md:flex-row items-center gap-12 px-4 lg:px-28'>
-        <div className='w-[55%] lg:w-full'>
+        <div className='lg:w-[55%] w-full'>
           <h2 className='text-[13px] lg:text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-right'>
             فرآیند آسان خرید سکه , پارسیان و انواع شمش{' '}
           </h2>
