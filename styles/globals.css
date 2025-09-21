@@ -73,9 +73,19 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'MyFont', sans-serif;
+  font-family: 'MyFont';
   height: 100vh;
 }
+
+input,
+select,
+textarea {
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent; 
+}
+
 
 label {
   color: #b2b2b2;

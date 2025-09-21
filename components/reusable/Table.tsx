@@ -3,7 +3,7 @@
 import React, { useMemo, useState, memo } from 'react';
 import { useGetProducts2Query } from '@/src/redux/api/authApiSlice';
 import { useRouter } from 'next/navigation';
-import { RefreshCw } from 'lucide-react';
+import { IoRefreshOutline } from "react-icons/io5";
 
 type Product = {
   product_id: number;
@@ -154,12 +154,13 @@ export default function Table() {
           <div className='text-[9px] sm:text-xs flex items-center gap-2 text-gray-500'>
             <div className='flex flex-col'>
               <span>
-                آخرین بروزرسانی: <span dir='ltr'>{updatedAt.date}</span>
+                آخرین بروزرسانی:
+                <span dir='ltr'>{updatedAt.date.replace(/-/g, '/')}</span>
               </span>
               <span className='flex justify-between items-center gap-1'>
                 ساعت {updatedAt.time}
                 <button onClick={() => refetch()} disabled={isFetching}>
-                  <RefreshCw
+                  <IoRefreshOutline
                     size={14}
                     className={
                       isFetching
@@ -175,7 +176,7 @@ export default function Table() {
       </div>
 
       <div className='mt-4'>
-        <div className='max-h-[450px] overflow-y-auto'>
+        <div className='max-h-[500px] overflow-y-auto'>
           <table className='w-full border-collapse text-[10px] sm:text-sm lg:text-base'>
             <thead className='sticky top-0 bg-white shadow z-10'>
               <tr className='bg-transparent text-gray-600 text-[9px] sm:text-xs lg:text-sm'>
@@ -201,7 +202,7 @@ export default function Table() {
                 return (
                   <tr
                     key={r.product_id}
-                    className={`border-b border-gray-300 text-[10px] sm:text-xs lg:text-sm ${
+                    className={`border-b border-gray-300 text-[10px] sm:text-xs lg:text-sm  ${
                       r.is_special_price
                         ? 'bg-[#DECCCC] border border-[#C58112]'
                         : !isActive
@@ -209,7 +210,7 @@ export default function Table() {
                         : 'bg-[#fefefe]'
                     }`}
                   >
-                    <td className='py-2 px-2 lg:pr-20 relative flex items-center gap-2'>
+                    <td className='py-3 px-2 lg:pr-20 relative flex items-center gap-2'>
                       {r.is_special_price && (
                         <span className='absolute right-0 top-2 lg:top-1/2 -translate-y-1/2 rotate-12 text-[#f65555] text-[8px] sm:text-[10px] px-0 lg:px-2 py-0.5 z-20'>
                           قیمت ویژه
@@ -218,9 +219,9 @@ export default function Table() {
                       <img
                         src={r.image}
                         alt={r.name_fa}
-                        className='w-6 h-6  lg:w-8 lg:h-8 relative '
+                        className='w-4 h-4 lg:w-8 lg:h-8 relative '
                       />
-                      <span className='relative '>{r.name_fa}</span>
+                      <span className='relative text-[9px] lg:text-[18px]'>{r.name_fa}</span>
                     </td>
 
                     <td className='py-2 px-2 text-center'>
@@ -254,9 +255,9 @@ export default function Table() {
                       />
                     </td>
 
-                    <td className='py-2 px-2 text-center'>
+                    <td className='py-2 text-center'>
                       <button
-                        className={`px-2 sm:px-4 py-1 text-[9px] sm:text-xs rounded-[6px] border ${
+                        className={`lg:px-6 px-2  py-2 text-[9px] sm:text-xs rounded-[16px] border ${
                           r.is_special_price
                             ? 'bg-transparent border-primary-500 text-primary-500 font-semibold'
                             : !r.is_active

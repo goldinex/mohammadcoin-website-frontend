@@ -24,8 +24,8 @@ export default function Faq() {
   const toggle = (id: string) => setOpenId(prev => prev === id ? null : id);
 
   return (
-    <section dir="rtl" className="w-full px-4 lg:px-0 py-10">
-      <h3 className="text-center text-[18px] md:text-[20px] font-medium text-gray-800 mb-6">سوالات متداول</h3>
+    <section dir="rtl" className="w-full px-4 lg:px-0 py-2">
+      <h3 className="text-right lg:text-center text-[18px] md:text-[20px] font-medium text-gray-800 mb-6">سوالات متداول</h3>
 
       <div className="mx-auto max-w-6xl space-y-4">
         {DATA.map(item => {
@@ -33,7 +33,7 @@ export default function Faq() {
           return (
             <div key={item.id} className="rounded-[10px] bg-[#E8DDA4]">
               <button type="button" onClick={() => toggle(item.id)} className="w-full flex items-center justify-between px-4 md:px-6 py-4">
-                <span className="text-sm md:text-base text-gray-800">{item.question}</span>
+                <span className="text-[16px] md:text-[18px] text-gray-800">{item.question}</span>
                 <span className="w-6 h-6 flex items-center justify-center text-lg text-gray-800">{isOpen ? '–' : '+'}</span>
               </button>
               <div className={`bg-[#FDFDFD] overflow-hidden transition-[max-height] duration-300 ${isOpen ? 'max-h-40' : 'max-h-0'}`}>

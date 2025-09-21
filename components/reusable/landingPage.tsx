@@ -45,7 +45,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className='flex items-center justify-end ml-32'>
+          <div className='flex items-center justify-end'>
             <div className='relative will-change-transform'>
               <img
                 src='/img/pic.svg'

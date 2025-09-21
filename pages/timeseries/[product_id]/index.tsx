@@ -84,14 +84,19 @@ export default function TimeseriesPage() {
     return {
       chart: {
         type: 'areaspline',
+        style: {
+          fontFamily: 'MyFont, sans-serif',
+        },
         backgroundColor: 'transparent',
         height: 400,
       },
       title: { text: '' },
       xAxis: {
-        categories: dates,
-        type: 'category',
-        visible: false,
+        lineWidth: 1, 
+        lineColor: '#ccc', 
+        tickLength: 0, 
+        labels: { enabled: false }, 
+        gridLineWidth: 0, 
       },
       yAxis: {
         min: min - buffer,
@@ -103,7 +108,7 @@ export default function TimeseriesPage() {
         useHTML: true,
         formatter: function () {
           const i = this.points?.[0]?.x ?? 0;
-          return `<div style="font-family: 'MyFont'; direction: rtl; text-align: right">
+          return `<div style="font-family: 'MyFont'; direction: ltr; text-align: right">
                     <b>${dates[i]}</b><br/>
                     خرید: ${buyPrices[i].toLocaleString('fa-IR')} تومان<br/>
                     فروش: ${sellPrices[i].toLocaleString('fa-IR')} تومان
@@ -216,11 +221,7 @@ export default function TimeseriesPage() {
       <div className='mt-10'>
         <p className='text-[13px] lg:text-[26px] mb-3'>{`نمودار قیمت برای ${productName}`}</p>
         <p className='lg:text-[18px] text-[11px]'>
-          نمودار بالا روند نوسانات قیمتی سکه پارسیان ۱/۱۰۰ را در بازه زمانی
-          مشخص‌شده نشان می‌دهد. تغییرات قیمت این سکه تحت تأثیر عواملی مانند نرخ
-          جهانی طلا، نوسانات ارز و شرایط بازار داخلی قرار دارد. بررسی این نمودار
-          می‌تواند به سرمایه‌گذاران و خریداران کمک کند تا روند حرکتی سکه را بهتر
-          تحلیل کرده و تصمیمات آگاهانه‌تری در خرید یا فروش داشته باشند.
+          {`نمودار بالا روند نوسانات قیمتی ${productName} را در بازه زمانی مشخص‌شده نشان می‌دهد. تغییرات قیمت این ${productName} تحت تأثیر عواملی مانند نرخ جهانی طلا، نوسانات ارز و شرایط بازار داخلی قرار دارد. بررسی این نمودار می‌تواند به سرمایه‌گذاران و خریداران کمک کند تا روند حرکتی ${productName} را بهتر تحلیل کرده و تصمیمات آگاهانه‌تری در خرید یا فروش داشته باشند.`}
         </p>
       </div>
     </div>

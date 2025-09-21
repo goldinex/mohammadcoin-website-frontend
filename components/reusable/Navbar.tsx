@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <div dir='ltr'>
-      <div className='w-[96%] mx-auto flex justify-between items-center px-6 py-4 text-neutral-900'>
+      <div className='w-[96%] mx-auto flex justify-between items-center py-4 text-neutral-900'>
         <div className='lg:hidden'>
           <a
             href='https://app.sekemohammad.com'

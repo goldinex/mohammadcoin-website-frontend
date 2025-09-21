@@ -30,7 +30,7 @@ export default function GoldCarousel() {
   const scrollItems = [...coins, ...coins, ...coins];
 
   return (
-    <div className='overflow-hidden mb-4 w-full lg:w-[95%] mx-auto h-[40px] lg:h-[68px] bg-primary-210 rounded-none lg:rounded-[16px] flex items-center relative'>
+    <div className='overflow-hidden mb-4 w-full flex justify-between items-center px-6 lg:w-[96%] mx-auto h-[40px] lg:h-[68px] bg-primary-210 rounded-none lg:rounded-[16px]  relative'>
       <div
         className='flex animate-scroll whitespace-nowrap'
         style={{ gap: '2rem' }}
@@ -42,7 +42,7 @@ export default function GoldCarousel() {
             className='flex items-center px-4 py-2 text-sm'
           >
             <p className='ml-2 text-[#616B47]'>{coin.name_fa}:</p>
-            <p className='text-[#616B47]'>
+            <p className='text-[#616B47] font-MyFont'>
               {coin.latest_buy_price.toLocaleString()} {cartText.ir}
             </p>
           </div>

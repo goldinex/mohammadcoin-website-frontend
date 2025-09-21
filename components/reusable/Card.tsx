@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useRef } from 'react';
 import { useGetProductsQuery } from '@/src/redux/api/authApiSlice';
 import {
   MdOutlineKeyboardArrowDown,
@@ -37,7 +37,7 @@ function BullionCard({ item }: { item: Bullion }) {
               قیمت ویژه
             </div>
           )}
-          <div className='text-[9px] lg:text-[18px] font-medium text-gray-800 mb-2'>
+          <div className='text-[9px] mt-4 lg:text-[18px] font-medium text-gray-800 mb-2'>
             {item.name_fa}
           </div>
           <div className='text-[9px] lg:text-[14px] text-gray-600 leading-5'>
@@ -83,6 +83,8 @@ function BullionCard({ item }: { item: Bullion }) {
 export default function CardSection() {
   const { data: products, isLoading } = useGetProductsQuery();
   const [visibleCount, setVisibleCount] = useState<number>(6);
+  const bullionSectionRef = useRef<HTMLDivElement>(null);
+
   const imageMap: Record<string, string> = {
     azadi: '/img/azadi.svg',
     milad: '/img/milad.svg',
@@ -125,8 +127,12 @@ export default function CardSection() {
   }
 
   return (
-    <section dir='rtl' className='w-full px-4 lg:px-16 mt-10 lg:mt-40 py-10'>
-      <h3 className='text-center text-xl font-semibold text-gray-800 mb-6'>
+    <section
+      dir='rtl'
+      ref={bullionSectionRef}
+      className='w-full px-4 lg:px-16 mt-10 lg:mt-10 py-10'
+    >
+      <h3 className='text-center text-[32px] font-semibold text-gray-800 mb-10'>
         شمش ها
       </h3>
       <div className='grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-6'>
@@ -134,14 +140,16 @@ export default function CardSection() {
           <BullionCard key={item.product_id} item={item} />
         ))}
       </div>
-      <div className='w-[40%] mx-auto flex lg:flex-row flex-col justify-center mt-6'>
-        {bullionItems.length > 6 && (
+
+      {bullionItems.length > 6 && (
+        <div className='w-[40%] mx-auto flex lg:flex-row flex-col justify-center mt-6'>
           <button
             onClick={() => {
               if (hasMore) {
                 setVisibleCount((c) => Math.min(c + 6, bullionItems.length));
               } else {
                 setVisibleCount(6);
+                bullionSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
               }
             }}
             className='flex items-center gap-2 text-[14px] px-4 py-2 border border-secondary-400 rounded-[16px] text-secondary-400'
@@ -150,15 +158,11 @@ export default function CardSection() {
               {hasMore ? 'نمایش بیشتر' : 'نمایش کمتر'}
             </p>
             <span>
-              {hasMore ? (
-                <MdOutlineKeyboardArrowDown />
-              ) : (
-                <MdOutlineKeyboardArrowUp />
-              )}
+              {hasMore ? <MdOutlineKeyboardArrowDown /> : <MdOutlineKeyboardArrowUp />}
             </span>
           </button>
-        )}
-      </div>
+        </div>
+      )}
     </section>
   );
 }
