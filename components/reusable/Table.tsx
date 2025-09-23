@@ -3,7 +3,7 @@
 import React, { useMemo, useState, memo } from 'react';
 import { useGetProducts2Query } from '@/src/redux/api/authApiSlice';
 import { useRouter } from 'next/navigation';
-import { IoRefreshOutline } from "react-icons/io5";
+import { IoRefreshOutline } from 'react-icons/io5';
 
 type Product = {
   product_id: number;
@@ -14,6 +14,20 @@ type Product = {
   is_special_price?: boolean;
   is_active?: boolean;
   buy_price_change_percent?: number;
+};
+
+const imageMap: Record<string, string> = {
+  // سکه
+  seke: '/img/seke.svg',
+
+  // پارسیان
+  parsian: '/img/parsian.svg',
+
+  azadi: '/img/azadi.svg',
+  milad: '/img/milad.svg',
+  roz: '/img/roz.svg',
+  zanbagh: '/img/zanbagh.svg',
+  parsis: '/img/parsis.svg',
 };
 
 const SparkLineComponent: React.FC<{ values: number[]; positive: boolean }> = ({
@@ -56,7 +70,7 @@ const SparkLine = memo(SparkLineComponent);
 
 export default function Table() {
   const [showSpecialOnly, setShowSpecialOnly] = useState(false);
-  const [tab, setTab] = useState<'coin' | 'parsian'>('coin');
+  const [tab, setTab] = useState<'coin' | 'parsian' | 'shemsh'>('coin');
   const [skip, setSkip] = useState(true);
   const {
     data: products,
@@ -73,18 +87,38 @@ export default function Table() {
 
   const rows = useMemo(() => {
     const data = products ?? [];
-    const cat = tab === 'coin' ? 'seke' : 'parsian';
-
+    let cat = '';
+  
+    if (tab === 'coin') cat = 'seke';
+    else if (tab === 'parsian') cat = 'parsian';
+    else if (tab === 'shemsh') cat = 'shemsh';
+  
     let filtered = data.filter((p) => p.category === cat);
     if (showSpecialOnly) filtered = filtered.filter((p) => p.is_special_price);
-
-    return filtered.map((p) => ({
-      ...p,
-      spark: [1, 2, 3, 2, 1],
-      changePct: (p as any).buy_price_change_percent ?? 0,
-      image: cat === 'seke' ? '/img/seke.svg' : '/img/parsian.svg',
-    }));
+  
+    return filtered.map((p) => {
+      // پیش‌فرض
+      const defaultImage =
+        cat === 'seke'
+          ? '/img/seke.svg'
+          : cat === 'parsian'
+          ? '/img/parsian.svg'
+          : '/img/shemsh/default.svg';
+  
+      // 👇 این بخش مهمه
+      const normalized = p.name_en?.toLowerCase() || '';
+      const key = Object.keys(imageMap).find((k) => normalized.includes(k));
+      const image = key ? imageMap[key] : defaultImage;
+  
+      return {
+        ...p,
+        spark: [1, 2, 3, 2, 1],
+        changePct: (p as any).buy_price_change_percent ?? 0,
+        image,
+      };
+    });
   }, [products, tab, showSpecialOnly]);
+  
 
   const nowFa = useMemo(
     () =>
@@ -131,6 +165,15 @@ export default function Table() {
             } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
           >
             پارسیان
+          </button>
+          <button
+            type='button'
+            onClick={() => setTab('shemsh')}
+            className={`${
+              tab === 'shemsh' ? 'bg-white shadow' : ''
+            } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
+          >
+            شمش
           </button>
         </div>
       </div>
@@ -221,7 +264,9 @@ export default function Table() {
                         alt={r.name_fa}
                         className='w-4 h-4 lg:w-8 lg:h-8 relative '
                       />
-                      <span className='relative text-[9px] lg:text-[18px]'>{r.name_fa}</span>
+                      <span className='relative text-[9px] lg:text-[18px]'>
+                        {r.name_fa}
+                      </span>
                     </td>
 
                     <td className='py-2 px-2 text-center'>
