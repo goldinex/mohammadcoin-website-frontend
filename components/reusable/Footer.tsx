@@ -1,17 +1,9 @@
 'use client';
-import { useEffect } from 'react';
 import React from 'react';
 import { FaPhone } from 'react-icons/fa';
 import { IoMail } from 'react-icons/io5';
 
 export default function Footer() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src =
-      'https://trustseal.enamad.ir/TrustSealScripts.js?id=648055&Code=vrk1eUGrbNSBdm8dxyFpo23UYCi280B7';
-    script.defer = true;
-    document.getElementById('enamad')?.appendChild(script);
-  }, []);
 
   return (
     <footer dir='rtl' className='w-full text-secondary-800 px-3 lg:px-6 mt-12'>
@@ -121,7 +113,20 @@ export default function Footer() {
               <p className='pb-2'> اعتماد شما سرمایه ماست</p>
               <span className='w-10 h-1 rounded-[7px] bg-[#959d7d] block'></span>
             </div>
-            <div className='w-20 h-20' id='enamad'></div>
+            <div className='flex items-center gap-4'>
+              <a
+                referrerPolicy='origin'
+                target='_blank'
+                href='https://trustseal.enamad.ir/?id=648055&Code=vrk1eUGrbNSBdm8dxyFpo23UYCi280B7'
+              >
+                <img
+                  referrerPolicy='origin'
+                  src='https://trustseal.enamad.ir/logo.aspx?id=648055&Code=vrk1eUGrbNSBdm8dxyFpo23UYCi280B7'
+                  alt='نماد اعتماد الکترونیکی'
+                  style={{ cursor: 'pointer' }}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
