@@ -113,7 +113,7 @@ export default function Footer() {
               <p className='pb-2'> اعتماد شما سرمایه ماست</p>
               <span className='w-10 h-1 rounded-[7px] bg-[#959d7d] block'></span>
             </div>
-            <div className='flex w-[35%] border border-[#616B47] rounded-[8px] bg-[#616B47] p-2 items-center gap-4'>
+            <div className='flex w-[25%] border border-[#616B47] rounded-[8px] bg-[#616B47] p-2 items-center gap-4'>
               <a
                 referrerPolicy='origin'
                 target='_blank'
