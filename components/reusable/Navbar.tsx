@@ -66,11 +66,11 @@ export default function Navbar() {
         />
       )}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
+        className={`fixed top-0 right-0 h-full w-64 bg-[##FAF6CF] shadow-lg transform transition-transform duration-300 z-50 ${
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className='flex justify-between items-center p-4 border-b'>
+        <div className='flex justify-between items-center p-4 border-b border-[#E6CE71]'>
           <button onClick={() => setMenuOpen(false)}>
             <X size={24} />
           </button>
@@ -81,7 +81,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className='hover:text-yellow-400'
+              className='hover:text-yellow-400 border-b border-[#E6CE71] pb-3'
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
