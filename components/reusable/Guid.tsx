@@ -24,7 +24,7 @@ export default function HowItWorks() {
             فرآیند آسان خرید سکه , پارسیان و انواع شمش{' '}
           </h2>
           <img className='flex w-full  lg:hidden' src='/img/iPhonemobile.svg' alt='' />
-          <ul className='space-y-6 pr-5 lg:pr-0'>
+          <ul className='space-y-6 pr-5'>
             {steps.map((step, index) => (
               <li key={index} className='flex items-center gap-3 text-right'>
                 <img src='/img/Check.svg' alt='تیک آبی' className='w-8 h-8' />

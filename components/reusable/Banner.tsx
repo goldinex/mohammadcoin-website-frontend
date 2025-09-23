@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Banner() {
   return (
-    <section dir='rtl' className='w-full mt-8 lg:mt-40 mb-4'>
+    <section dir='rtl' className='w-full mt-8 lg:mt-12 mb-4'>
       <div className='bg-[#F3F5F0] rounded-[8px]overflow-x-hidden'>
         <div className='mx-auto max-w-5xl grid  grid-cols-2 items-center gap-6'>
           <div className='text-center md:text-right'>

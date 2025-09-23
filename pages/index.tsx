@@ -20,7 +20,9 @@ export default function Home() {
       </div>
       <Card />
       <Banner />
-      <Guid />
+      <div id='guid'>
+      <Guid/>
+      </div>
       <WhyUs />
       <div id='faq'>
         <Faq />

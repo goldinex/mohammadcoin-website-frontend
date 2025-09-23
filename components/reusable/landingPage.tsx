@@ -30,7 +30,10 @@ export default function LandingPage() {
       <div className='relative z-10 mx-3 lg:mx-20 px-1 lg:px-6 md:px-10 lg:py-12 pb-0 pt-12 md:py-16'>
         <div className='lg:grid grid-cols-1 flex flex-col-reverse lg:grid-cols-2 items-center'>
           <div>
-            <h1 className='text-[16px] lg:text-[36px] leading-[1.35] font-bold text-secondary-900 mb-6'>
+            <h1
+              className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6  tracking-[0.2px] 
+    leading-[32px]'
+            >
               تنها با چند کلیک، <span className='text-yellow-400'>سکه</span>{' '}
               موردنظر خود را با بهترین قیمت سفارش دهید و با بهترین قیمت بفروشید.
             </h1>

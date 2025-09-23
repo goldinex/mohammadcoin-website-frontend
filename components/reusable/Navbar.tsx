@@ -20,7 +20,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div dir='ltr'>
+    <div dir='ltr' className='px-[3%]'>
       <div className='w-[96%] mx-auto flex justify-between items-center py-4 text-neutral-900'>
         <div className='lg:hidden'>
           <a
@@ -43,14 +43,14 @@ export default function Navbar() {
         <div className='flex items-center flex-1 lg:justify-end justify-center'>
           <div dir='rtl' className='hidden lg:flex gap-8 text-[16px]'>
             {links.map((l) => (
-              <a key={l.href} href={l.href} className='hover:text-yellow-400'>
+              <a key={l.href} href={l.href} className='text-[16px] hover:text-yellow-400'>
                 {l.label}
               </a>
             ))}
           </div>
           <div className='w-16 ml-0 lg:ml-20'>
             <Link href='/'>
-              <img src='/img/logo3.svg' alt='لوگو' className='cursor-pointer' />
+              <img src='/img/logo3.svg' alt='لوگو' className=' cursor-pointer' />
             </Link>
           </div>
         </div>
