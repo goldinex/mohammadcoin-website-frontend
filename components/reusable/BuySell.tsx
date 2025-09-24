@@ -179,7 +179,7 @@ export default function CoinExchange() {
                 type='submit'
                 onClick={() =>
                   router.push(
-                    `/order?mode=${mode}&coin=${coinType}&qty=${quantity}&amount=${amount}`
+                    `https://app.sekemohammad.com`
                   )
                 }
                 className={`lg:w-full h-[44px]  w-[40%] whitespace-nowrap py-3 text-sm font-medium shadow-sm transition rounded-[16px] text-white 

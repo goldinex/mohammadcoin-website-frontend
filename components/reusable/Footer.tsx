@@ -9,8 +9,8 @@ export default function Footer() {
     <footer dir='rtl' className='w-full text-secondary-800 px-3 lg:px-6 mt-12'>
       <div className='bg-secondary-400 rounded-[10px] px-12 md:px-24 py-6 md:py-8'>
         <div className='flex flex-col lg:flex-row  items-center justify-between border-b border-[#959d7d] pb-3'>
-          <div className='flex items-center'>
-            <img className='w-28' src='/img/headerLogo.png' alt='logo' />
+          <div className='flex items-center bg-[#4d5633] rounded-[8px] pl-3'>
+            <img className='w-32' src='/img/headerLogo.png' alt='logo' />
           </div>
           <div className='flex items-center gap-2 text-[13px] text-secondary-800'>
             <>
@@ -113,7 +113,7 @@ export default function Footer() {
               <p className='pb-2'> اعتماد شما سرمایه ماست</p>
               <span className='w-10 h-1 rounded-[7px] bg-[#959d7d] block'></span>
             </div>
-            <div className='flex w-[25%] border border-[#616B47] rounded-[8px] bg-[#616B47] p-2 items-center gap-4'>
+            <div className='flex w-[25%] border border-[#4d5633] rounded-[8px] bg-[#4d5633] p-2 items-center gap-4'>
               <a
                 referrerPolicy='origin'
                 target='_blank'
@@ -133,7 +133,7 @@ export default function Footer() {
       <div className='bg-secondary-400 flex justify-between items-center rounded-[10px] px-2 lg:px-24 py-5 mt-3 text-center text-[11px] text-secondary-700'>
         <p className='text-[6px] lg:text-[14px]'>
           {' '}
-          کلیه حقوق مادی و معنوی این وب‌سایت متعلق به سکه محمد می‌باشد و هرگونه
+          کلیه حقوق مادی و معنوی این وب‌سایت متعلق به علیرضا طرشتی‌نژاد می‌باشد و هرگونه
           کپی‌برداری پیگرد قانونی دارد.{' '}
         </p>
         <span className='text-[6px] lg:text-[12px]'>
