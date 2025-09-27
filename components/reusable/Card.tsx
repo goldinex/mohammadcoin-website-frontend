@@ -86,9 +86,9 @@ export default function CardSection() {
   const bullionSectionRef = useRef<HTMLDivElement>(null);
 
   const imageMap: Record<string, string> = {
-    azadi: '/img/azadi.svg',
-    milad: '/img/milad.svg',
-    roz: '/img/roz.svg',
+    azadi: '/img/azadi.png',
+    milad: '/img/milad.png',
+    roz: '/img/roz.png',
     zanbagh: '/img/zanbagh.svg',
     parsis: '/img/parsis.svg',
   };

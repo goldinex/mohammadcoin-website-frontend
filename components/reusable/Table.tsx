@@ -17,15 +17,12 @@ type Product = {
 };
 
 const imageMap: Record<string, string> = {
-  // سکه
-  seke: '/img/seke.svg',
-
-  // پارسیان
+  seke: '/img/seke.png',
   parsian: '/img/parsian.svg',
 
-  azadi: '/img/azadi.svg',
-  milad: '/img/milad.svg',
-  roz: '/img/roz.svg',
+  azadi: '/img/azadi.png',
+  milad: '/img/milad.png',
+  roz: '/img/roz.png',
   zanbagh: '/img/zanbagh.svg',
   parsis: '/img/parsis.svg',
 };
@@ -85,6 +82,18 @@ export default function Table() {
     setSkip(false);
   }, []);
 
+  const categoryKeys: Record<string, string[]> = {
+    seke: ['seke'],
+    parsian: ['parsian'],
+    shemsh: ['azadi', 'milad', 'roz', 'zanbagh', 'parsis'], 
+  };
+  
+  const defaultImages: Record<string, string> = {
+    seke: '/img/seke.png',
+    parsian: '/img/parsian.svg',
+    shemsh: '/img/shemsh/default.svg',
+  };
+  
   const rows = useMemo(() => {
     const data = products ?? [];
     let cat = '';
@@ -97,18 +106,10 @@ export default function Table() {
     if (showSpecialOnly) filtered = filtered.filter((p) => p.is_special_price);
   
     return filtered.map((p) => {
-      // پیش‌فرض
-      const defaultImage =
-        cat === 'seke'
-          ? '/img/seke.svg'
-          : cat === 'parsian'
-          ? '/img/parsian.svg'
-          : '/img/shemsh/default.svg';
-  
-      // 👇 این بخش مهمه
       const normalized = p.name_en?.toLowerCase() || '';
-      const key = Object.keys(imageMap).find((k) => normalized.includes(k));
-      const image = key ? imageMap[key] : defaultImage;
+      const keys = categoryKeys[cat] || [];
+        let key = keys.find((k) => normalized.includes(k));
+      const image = key ? imageMap[key] : defaultImages[cat];
   
       return {
         ...p,
@@ -118,6 +119,7 @@ export default function Table() {
       };
     });
   }, [products, tab, showSpecialOnly]);
+  
   
 
   const nowFa = useMemo(
