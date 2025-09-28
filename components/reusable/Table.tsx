@@ -85,32 +85,32 @@ export default function Table() {
   const categoryKeys: Record<string, string[]> = {
     seke: ['seke'],
     parsian: ['parsian'],
-    shemsh: ['azadi', 'milad', 'roz', 'zanbagh', 'parsis'], 
+    shemsh: ['azadi', 'milad', 'roz', 'zanbagh', 'parsis'],
   };
-  
+
   const defaultImages: Record<string, string> = {
     seke: '/img/seke.png',
     parsian: '/img/parsian.svg',
     shemsh: '/img/shemsh/default.svg',
   };
-  
+
   const rows = useMemo(() => {
     const data = products ?? [];
     let cat = '';
-  
+
     if (tab === 'coin') cat = 'seke';
     else if (tab === 'parsian') cat = 'parsian';
     else if (tab === 'shemsh') cat = 'shemsh';
-  
+
     let filtered = data.filter((p) => p.category === cat);
     if (showSpecialOnly) filtered = filtered.filter((p) => p.is_special_price);
-  
+
     return filtered.map((p) => {
       const normalized = p.name_en?.toLowerCase() || '';
       const keys = categoryKeys[cat] || [];
-        let key = keys.find((k) => normalized.includes(k));
+      let key = keys.find((k) => normalized.includes(k));
       const image = key ? imageMap[key] : defaultImages[cat];
-  
+
       return {
         ...p,
         spark: [1, 2, 3, 2, 1],
@@ -119,8 +119,6 @@ export default function Table() {
       };
     });
   }, [products, tab, showSpecialOnly]);
-  
-  
 
   const nowFa = useMemo(
     () =>
@@ -221,20 +219,16 @@ export default function Table() {
       </div>
 
       <div className='mt-4'>
-        <div className='max-h-[550px] overflow-y-auto'>
-          <table className='w-full border-collapse text-[10px] sm:text-sm lg:text-base'>
+        <div className='max-h-[550px] rounded-[15px] overflow-x-auto overflow-y-auto'>
+          <table className='w-full border-collapse text-[14px] lg:text-base'>
             <thead className='sticky top-0 bg-[#96A375] shadow rounded-t-8 z-10'>
-              <tr className='bg-transparent text-gray-100 text-[9px] sm:text-xs lg:text-sm'>
-                <th className='py-4 lg:pr-20 text-right px-1 sm:px-3 lg:px-5'>
+              <tr className='bg-transparent text-gray-100 text-[14px]  lg:text-base'>
+                <th className='py-4 lg:pr-20 text-right px-1 sm:px-3 lg:px-5 min-w-[150px]'>
                   بازار
                 </th>
-               
-                <th className='py-2 px-1 sm:px-3 lg:px-5'>
-                  قیمت خرید (تومان)
-                </th>
-                <th className='py-2 px-1 sm:px-3 lg:px-5'>
-                  قیمت فروش (تومان)
-                </th>
+
+                <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت خرید (تومان)</th>
+                <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت فروش (تومان)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>تغییرات (روزانه)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>مشاهده نمودارها</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'></th>
@@ -248,31 +242,30 @@ export default function Table() {
                 return (
                   <tr
                     key={r.product_id}
-                    className={`border-b border-gray-300 text-[10px] sm:text-xs lg:text-sm  ${
+                    className={`border-b border-gray-300 text-[14px]  lg:text-base  ${
                       r.is_special_price
                         ? 'bg-[#F0D8BF] border border-[#C58112]'
                         : !isActive
                         ? 'bg-[#E6E6E6] text-[#909090]'
-                        : 'bg-[#fefefe]'
+                        : 'bg-[#FAFAF7]'
                     }`}
                   >
-                    <td className='py-3 px-2 lg:pr-20 relative flex items-center gap-2'>
+                    <td className='py-3 px-2 lg:pr-20 relative flex items-center gap-2 min-w-[150px] whitespace-normal'>
                       {r.is_special_price && (
-                        <span className='absolute right-0 top-2 lg:top-1/2 -translate-y-1/2 rotate-12 text-[#E40E0E] text-[8px] sm:text-[10px] px-0 lg:px-2 py-0.5 z-20'>
+                        <span className='absolute right-0 top-1 lg:top-1/2 -translate-y-1/2 rotate-12 text-[#E40E0E] text-[14px] px-0 lg:px-2 py-0.5 z-20'>
                           قیمت ویژه
                         </span>
                       )}
                       <img
                         src={r.image}
                         alt={r.name_fa}
-                        className='w-4 h-4 lg:w-8 lg:h-8 relative '
+                        className='w-6 h-6 lg:w-8 lg:h-8 relative '
                       />
-                      <span className='relative text-[9px] lg:text-[18px]'>
+                      <span className='relative text-[14px] lg:text-base'>
                         {r.name_fa}
                       </span>
                     </td>
 
-                  
                     <td className='py-2 px-2 text-center'>
                       {r.latest_sell_price.toLocaleString('fa-IR')}
                     </td>
@@ -303,9 +296,9 @@ export default function Table() {
                       />
                     </td>
 
-                    <td className='py-2 text-center'>
+                    <td className='py-2 whitespace-normal min-w-[150px] text-center'>
                       <button
-                        className={`lg:px-6 px-2  py-2 text-[9px] sm:text-xs rounded-[16px] border ${
+                        className={`lg:px-6 px-2  py-2 text-[14px]  rounded-[16px] border ${
                           r.is_special_price
                             ? 'bg-transparent border-primary-500 text-primary-500 font-semibold'
                             : !r.is_active

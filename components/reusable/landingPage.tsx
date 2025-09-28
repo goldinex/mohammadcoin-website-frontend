@@ -20,7 +20,7 @@ export default function LandingPage() {
         />
         <img
           src='/img/svg2.svg'
-          className='absolute top-[60%] left-1/3 w-8 animate-float'
+          className='absolute top-[70%] left-1/3 w-8 animate-float'
           style={{ animationDuration: '5s', animationDelay: '1s' }}
           alt='pic2'
         />
@@ -32,7 +32,7 @@ export default function LandingPage() {
         />
       </div>
 
-      <div className='relative z-10 mx-3 lg:mx-20 px-1 lg:px-6 md:px-10 lg:py-12 pb-0 pt-2 lg:pt-12 md:py-16'>
+      <div className='relative z-10 mx-3 lg:mx-20 px-1 lg:px-6 md:px-10  pb-0  '>
         <div className='lg:grid grid-cols-1 flex flex-col-reverse lg:grid-cols-2 items-center'>
           <div>
             <h1
@@ -63,9 +63,9 @@ export default function LandingPage() {
               }`}
             >
               <img
-                src='/img/pic.svg'
+                src='/img/main.png'
                 alt=''
-                className='block relative rounded-[16px] w-32 lg:w-[20rem]'
+                className='block relative rounded-[16px] w-32 lg:w-fit'
               />
             </div>
           </div>

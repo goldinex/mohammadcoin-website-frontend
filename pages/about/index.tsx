@@ -12,12 +12,93 @@ export default function Index() {
         </p>
       </div>
 
-     <div className='hidden lg:flex justify-center mt-10'>
-      <img src="/img/about.svg" alt="" />
-     </div>
-     <div className='flex lg:hidden justify-center mt-10'>
-      <img src="/img/aboutmob.svg" alt="" />
-     </div>
+      <div className='hidden lg:flex justify-center mt-10'>
+        <div className="relative w-[83%] h-[125vh] bg-[url('/img/bg.png')] bg-cover bg-center">
+          <div className='absolute top-1/4 left-3/4 transform -translate-x-1/2 w-11/12 md:w-2/3 lg:w-1/2 px-4 md:px-8'>
+            <p className='text-[18px] text-[#1C2B36]'>
+              سکه محمد میراث‌دار ۳۵ سال سابقه درخشان در بازار طلا است جایی که
+              مدیران مجموعه ،اقایان محمد طرشتی نژاد و محمد حسن حسینمردی پس از
+              تجربه موفق و کسب اعتبار بازار حضوری و فیزیکی طلا تصمیم بر ان
+              گرفتند که اعتبار سنتی را با آسایش خرید و فروش آنلاین تلفیق کرده و
+              پا به دنیای کسب و کار مجازی بگذارند.
+            </p>
+            <p className='text-[18px] text-[#1C2B36]'>
+              ما با افتخار تاکید می‌کنیم که هر سه شعبه فیزیکی ما دارای مجوز رسمی
+              اتحادیه طلا و جواهر تهران و همچنین سند مالکیت کامل میباشد ، که
+              تضمین‌کننده بالاترین سطح قانونی بودن و اصالت ۱۰۰٪ محصولات است.
+            </p>
+            <p className='text-[18px] text-[#1C2B36]'>
+              شما در سکه محمد یک نهاد مالی ریشه‌دار را انتخاب می‌کنید که اصالت
+              هر سکه، شمش یا پارسیان را با فاکتور رسمی تضمین می‌کند.
+            </p>
+            <p className='text-[18px] text-[#1C2B36]'>
+              ما فرآیند را ساده کرده‌ایم: از شفافیت قیمت‌های لحظه‌ای و امکان
+              مقایسه انلاین تا مزیت منحصربه‌فرد خرید و فروش دوطرفه که نقدشوندگی
+              سرمایه شما را در هر لحظه تضمین می‌کند.
+            </p>
+            <p className='text-[18px] text-[#1C2B36]'>
+              با تیم کارشناسان باتجربه ما، در مسیر سرمایه‌گذاری خود تنها نخواهید
+              بود؛ امروز با اطمینان کامل به جمع مشتریان سکه محمد بپیوندید.
+            </p>
+            <div className='flex mt-10 items-start'>
+              <HiOutlineLocationMarker size={30} className='ml-3' />
+              <p className='m-0 text-[18px]'>
+                {' '}
+                آدرس: صادقیه - بلوار شهدای صادقیه - خیابان ستارخان - زرناب -
+                پلاک : -1144.0 - طبقه : همکف - واحد : 1
+              </p>
+            </div>
+            <div className='flex mt-10 items-start'>
+              <FaPhone className='ml-3' />
+              <p className='text-[18px]'>09939409692</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className='lg:hidden flex justify-center mt-10'>
+        <div className="relative w-full h-[66vh] bg-[url('/img/bg-mob.png')] bg-cover bg-center">
+          <div className='absolute top-1/3 left-2/4 transform -translate-x-1/2 w-11/12 md:w-2/3 lg:w-1/2 px-4 md:px-8'>
+            <p className='text-[10px] text-[#1C2B36]'>
+              سکه محمد میراث‌دار ۳۵ سال سابقه درخشان در بازار طلا است جایی که
+              مدیران مجموعه ،اقایان محمد طرشتی نژاد و محمد حسن حسینمردی پس از
+              تجربه موفق و کسب اعتبار بازار حضوری و فیزیکی طلا تصمیم بر ان
+              گرفتند که اعتبار سنتی را با آسایش خرید و فروش آنلاین تلفیق کرده و
+              پا به دنیای کسب و کار مجازی بگذارند.
+            </p>
+            <p className='text-[10px] text-[#1C2B36]'>
+              ما با افتخار تاکید می‌کنیم که هر سه شعبه فیزیکی ما دارای مجوز رسمی
+              اتحادیه طلا و جواهر تهران و همچنین سند مالکیت کامل میباشد ، که
+              تضمین‌کننده بالاترین سطح قانونی بودن و اصالت ۱۰۰٪ محصولات است.
+            </p>
+            <p className='text-[10px] text-[#1C2B36]'>
+              شما در سکه محمد یک نهاد مالی ریشه‌دار را انتخاب می‌کنید که اصالت
+              هر سکه، شمش یا پارسیان را با فاکتور رسمی تضمین می‌کند.
+            </p>
+            <p className='text-[10px] text-[#1C2B36]'>
+              ما فرآیند را ساده کرده‌ایم: از شفافیت قیمت‌های لحظه‌ای و امکان
+              مقایسه انلاین تا مزیت منحصربه‌فرد خرید و فروش دوطرفه که نقدشوندگی
+              سرمایه شما را در هر لحظه تضمین می‌کند.
+            </p>
+            <p className='text-[10px] text-[#1C2B36]'>
+              با تیم کارشناسان باتجربه ما، در مسیر سرمایه‌گذاری خود تنها نخواهید
+              بود؛ امروز با اطمینان کامل به جمع مشتریان سکه محمد بپیوندید.
+            </p>
+            <div className='flex mt-10 items-start'>
+              <HiOutlineLocationMarker size={30} className='ml-3' />
+              <p className='m-0 text-[10px]'>
+                {' '}
+                آدرس: صادقیه - بلوار شهدای صادقیه - خیابان ستارخان - زرناب -
+                پلاک : -1144.0 - طبقه : همکف - واحد : 1
+              </p>
+            </div>
+            <div className='flex mt-10 items-start'>
+              <FaPhone className='ml-3' />
+              <p className='text-[10px]'>09939409692</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

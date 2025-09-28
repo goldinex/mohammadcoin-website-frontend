@@ -11,7 +11,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section className='py-1 lg:py-16'>
-      <p className='text-[8px] lg:text-[18px] px-4 lg:px-28 mb-5'>
+      <p className='text-[14px] lg:text-[18px] px-4 lg:px-28 mb-5'>
         در سکه محمد مرز های سنتی خرید طلارا شکسته ایم . ما یک پلتفرم ساده
         نیستیم،ما ضامن امنیت مالی شما در فضای دیجیتال هستیم . پس از تجربه شیرین
         سالیان متمادی ارائه خدمات حضوری به مشتریان عزیز، اکنون با تضمین صد در
@@ -22,7 +22,7 @@ export default function HowItWorks() {
       </p>
       <div className=' flex flex-col md:flex-row items-center gap-12 px-4 lg:px-28'>
         <div className='lg:w-[55%] w-full'>
-          <h2 className='text-[13px] lg:text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-right'>
+          <h2 className='text-[16px] lg:text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-right'>
             فرآیند آسان خرید سکه , پارسیان و انواع شمش{' '}
           </h2>
           <img
@@ -32,9 +32,9 @@ export default function HowItWorks() {
           />
           <ul className='space-y-6 pr-5'>
             {steps.map((step, index) => (
-              <li key={index} className='flex items-center gap-3 text-right'>
+              <li key={index} className='flex items-start gap-3 text-right'>
                 <img src='/img/Check.svg' alt='تیک آبی' className='w-8 h-8' />
-                <span className='text-gray-700 text-[9px] lg:text-lg'>
+                <span className='text-gray-700 text-[15px] lg:text-lg'>
                   {step}
                 </span>
               </li>

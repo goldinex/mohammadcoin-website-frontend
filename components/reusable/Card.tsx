@@ -37,10 +37,10 @@ function BullionCard({ item }: { item: Bullion }) {
               قیمت ویژه
             </div>
           )}
-          <div className='text-[9px] mt-4 lg:text-[18px] font-medium text-gray-800 mb-2'>
+          <div className='text-[16px] mt-4 lg:text-[18px] font-medium text-gray-800 mb-2'>
             {item.name_fa}
           </div>
-          <div className='text-[9px] lg:text-[14px] text-gray-600 leading-5'>
+          <div className='text-[16px] lg:text-[14px] text-gray-600 leading-5'>
             عیار 995
           </div>
         </div>
@@ -55,7 +55,7 @@ function BullionCard({ item }: { item: Bullion }) {
       </div>
 
       <div className='mt-4 flex flex-col lg:flex-row items-center lg:items-center justify-between'>
-        <div className='text-[9px] lg:mb-0 mb-4 lg:text-[18px] text-gray-800'>
+        <div className='text-[16px] lg:mb-0 mb-4 lg:text-[18px] text-gray-800'>
           قیمت روز: {item.latest_buy_price.toLocaleString('fa-IR')}
         </div>
         <button
