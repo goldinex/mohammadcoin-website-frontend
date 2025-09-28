@@ -41,8 +41,8 @@ export default function GoldCarousel() {
             key={idx}
             className='flex items-center px-4 py-2 text-sm'
           >
-            <p className='ml-2 text-[#616B47]'>{coin.name_fa}:</p>
-            <p className='text-[#616B47] font-MyFont'>
+            <p className='ml-2 text-[#0E171F]'>{coin.name_fa}:</p>
+            <p className='text-[#0E171F] font-MyFont'>
               {coin.latest_buy_price.toLocaleString()} {cartText.ir}
             </p>
           </div>

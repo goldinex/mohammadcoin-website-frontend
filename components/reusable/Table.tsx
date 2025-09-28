@@ -190,7 +190,7 @@ export default function Table() {
             className={`text-[10px] sm:text-xs lg:text-sm rounded-[16px] border px-2 sm:px-4 py-1 transition ${
               showSpecialOnly
                 ? 'bg-[#F65555] text-white border-[#F65555]'
-                : 'text-black border-[#F65555]'
+                : 'text-[#E40E0E] border-[#F65555]'
             }`}
           >
             قیمت ویژه
@@ -221,18 +221,19 @@ export default function Table() {
       </div>
 
       <div className='mt-4'>
-        <div className='max-h-[500px] overflow-y-auto'>
+        <div className='max-h-[550px] overflow-y-auto'>
           <table className='w-full border-collapse text-[10px] sm:text-sm lg:text-base'>
-            <thead className='sticky top-0 bg-white shadow z-10'>
-              <tr className='bg-transparent text-gray-600 text-[9px] sm:text-xs lg:text-sm'>
-                <th className='py-2 lg:pr-20 text-right px-1 sm:px-3 lg:px-5'>
+            <thead className='sticky top-0 bg-[#96A375] shadow rounded-t-8 z-10'>
+              <tr className='bg-transparent text-gray-100 text-[9px] sm:text-xs lg:text-sm'>
+                <th className='py-4 lg:pr-20 text-right px-1 sm:px-3 lg:px-5'>
                   بازار
                 </th>
+               
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>
-                  قیمت خرید از ما (تومان)
+                  قیمت خرید (تومان)
                 </th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>
-                  قیمت فروش به ما (تومان)
+                  قیمت فروش (تومان)
                 </th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>تغییرات (روزانه)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>مشاهده نمودارها</th>
@@ -249,7 +250,7 @@ export default function Table() {
                     key={r.product_id}
                     className={`border-b border-gray-300 text-[10px] sm:text-xs lg:text-sm  ${
                       r.is_special_price
-                        ? 'bg-[#DECCCC] border border-[#C58112]'
+                        ? 'bg-[#F0D8BF] border border-[#C58112]'
                         : !isActive
                         ? 'bg-[#E6E6E6] text-[#909090]'
                         : 'bg-[#fefefe]'
@@ -257,7 +258,7 @@ export default function Table() {
                   >
                     <td className='py-3 px-2 lg:pr-20 relative flex items-center gap-2'>
                       {r.is_special_price && (
-                        <span className='absolute right-0 top-2 lg:top-1/2 -translate-y-1/2 rotate-12 text-[#f65555] text-[8px] sm:text-[10px] px-0 lg:px-2 py-0.5 z-20'>
+                        <span className='absolute right-0 top-2 lg:top-1/2 -translate-y-1/2 rotate-12 text-[#E40E0E] text-[8px] sm:text-[10px] px-0 lg:px-2 py-0.5 z-20'>
                           قیمت ویژه
                         </span>
                       )}
@@ -271,12 +272,12 @@ export default function Table() {
                       </span>
                     </td>
 
-                    <td className='py-2 px-2 text-center'>
-                      {r.latest_buy_price.toLocaleString('fa-IR')}
-                    </td>
-
+                  
                     <td className='py-2 px-2 text-center'>
                       {r.latest_sell_price.toLocaleString('fa-IR')}
+                    </td>
+                    <td className='py-2 px-2 text-center'>
+                      {r.latest_buy_price.toLocaleString('fa-IR')}
                     </td>
 
                     <td

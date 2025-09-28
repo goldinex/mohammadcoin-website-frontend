@@ -39,10 +39,13 @@ export default function LandingPage() {
               className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6  tracking-[0.2px] 
     leading-[32px]'
             >
-              تنها با چند کلیک، <span className='text-yellow-400'>سکه</span>{' '}
-              موردنظر خود را با بهترین قیمت سفارش دهید و با بهترین قیمت بفروشید.
+              بازار <span className='text-yellow-400'>طلا و سکه</span> در جیب شما
             </h1>
-
+            <h1  className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6  tracking-[0.2px] 
+    leading-[52px]'>
+              تنها با چند کلیک از سرمایه خود محافظت کنید .  با بهترین قیمت و در
+              سریع ترین زمان خرید و فروش کنید.
+            </h1>
             <div className='lg:flex hidden items-center gap-3'>
               <a
                 href='https://app.sekemohammad.com'

@@ -80,7 +80,7 @@ export default function CoinExchange() {
       <div className='w-full max-w-5xl'>
         <div className='flex justify-center mx-auto w-[90%] lg:w-[60%]'>
           <div className='relative w-full'>
-            <div className='flex bg-secondary-400  mx-auto justify-center rounded-t-[10px] w-[100%] py-2'>
+            <div className='flex bg-[#96A375]  mx-auto justify-center rounded-t-[10px] w-[100%] py-2'>
               <div className='bg-white w-[96%] rounded-[8px]  py-2 px-2'>
                 <button
                   type='button'
@@ -105,13 +105,13 @@ export default function CoinExchange() {
           </div>
         </div>
 
-        <div className='bg-secondary-400 rounded-2xl shadow-md p-5 lg:p-6'>
+        <div className='bg-[#96A375] rounded-2xl shadow-md p-5 lg:p-6'>
           <form
             onSubmit={handleSubmit}
             className='flex flex-col lg:flex-row gap-4 lg:gap-6 items-stretch'
           >
             <div className='flex-1 min-w-[260px]'>
-              <div className='text-xs text-gray-700 mb-2'>
+              <div className='text-xs text-[#FDFDFD] mb-2'>
                 {mode === 'buy' ? 'دریافت می‌کنم' : 'پرداخت می‌کنم'}
               </div>
               <div className='flex items-stretch gap-0 overflow-hidden rounded-[16px] bg-white border border-secondary-400'>
@@ -158,7 +158,7 @@ export default function CoinExchange() {
             </div>
 
             <div className='flex-1 min-w-[220px]'>
-              <div className='text-xs text-gray-700 mb-2'>
+              <div className='text-xs text-[#FDFDFD] mb-2'>
                 {mode === 'buy' ? 'پرداخت می‌کنم' : 'دریافت می‌کنم'}
               </div>
               <div className='relative'>
@@ -185,7 +185,7 @@ export default function CoinExchange() {
                 className={`lg:w-full h-[44px]  w-[40%] whitespace-nowrap py-3 text-sm font-medium shadow-sm transition rounded-[16px] text-white 
     ${
       mode === 'buy'
-        ? 'bg-success-400 hover:bg-[#118554]'
+        ? 'bg-[#077D55] hover:bg-[#118554]'
         : 'bg-[#B91C21] hover:bg-[#B91C21]'
     }`}
               >
