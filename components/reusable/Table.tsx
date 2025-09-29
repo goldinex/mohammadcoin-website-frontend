@@ -232,7 +232,7 @@ export default function Table() {
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت خرید (تومان)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت فروش (تومان)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>تغییرات (روزانه)</th>
-                <th className='py-2 px-1 sm:px-3 lg:px-5 hidden lg:block'>
+                <th className='py-2 px-1 sm:px-3 lg:px-5 hidden lg:table-cell'>
                   مشاهده نمودارها
                 </th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5 hidden lg:table-cell'></th>

@@ -81,7 +81,7 @@ export default function CoinExchange() {
         <div className='flex justify-center mx-auto w-[90%] lg:w-[60%]'>
           <div className='relative w-full'>
             <div className='flex bg-[#96A375]  mx-auto justify-center rounded-t-[10px] w-[100%] py-2'>
-              <div className='bg-white w-[96%] rounded-[8px]  py-2 px-2'>
+              <div className='bg-primary-400 w-[96%] rounded-[8px]  py-2 px-2'>
                 <button
                   type='button'
                   onClick={() => setMode('buy')}

@@ -5,6 +5,7 @@ import { Product } from '@/src/types/product';
 import { cartText } from '@/utils/text';
 
 const coinNames = [
+  `گرم ۱۸ عیار`,
   `${cartText.imami}`,
   `${cartText.tamamAzadi}`,
   `${cartText.nimAzadi}`,
