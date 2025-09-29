@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useMemo, useState, memo } from 'react';
-import { useGetProducts2Query } from '@/src/redux/api/authApiSlice';
+import { useGetProductsQuery } from '@/src/redux/api/authApiSlice';
 import { useRouter } from 'next/navigation';
 import { IoRefreshOutline } from 'react-icons/io5';
 
@@ -74,7 +74,9 @@ export default function Table() {
     isLoading,
     refetch,
     isFetching,
-  } = useGetProducts2Query(undefined, { skip });
+  } = useGetProductsQuery(undefined, {
+    pollingInterval: 30000,
+  });
 
   const router = useRouter();
 
@@ -278,7 +280,7 @@ export default function Table() {
                         positive ? 'text-green-600' : 'text-red-600'
                       }`}
                     >
-                      {Math.abs(r.changePct).toLocaleString('fa-IR')}%
+                      {r.changePct.toLocaleString('fa-IR')}%
                     </td>
 
                     <td className='py-2 px-2 text-center'>

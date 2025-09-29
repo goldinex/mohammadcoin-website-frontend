@@ -57,7 +57,7 @@ export default function Index() {
       </div>
 
       <div className='lg:hidden flex justify-center mt-10'>
-        <div className="relative w-full h-[66vh] bg-[url('/img/bg-mob.png')] bg-cover bg-center">
+        <div className="relative w-full h-[70vh] bg-[url('/img/bg-mob.png')] bg-cover bg-center">
           <div className='absolute top-1/3 left-2/4 transform -translate-x-1/2 w-11/12 md:w-2/3 lg:w-1/2 px-4 md:px-8'>
             <p className='text-[10px] text-[#1C2B36]'>
               سکه محمد میراث‌دار ۳۵ سال سابقه درخشان در بازار طلا است جایی که

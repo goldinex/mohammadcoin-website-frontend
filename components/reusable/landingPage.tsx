@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 export default function LandingPage() {
-  const [loaded, setLoaded] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    setLoaded(true);
+    const timer = setTimeout(() => {
+      setShowContent(true);
+    }, 1000);
+    return () => clearTimeout(timer);
   }, []);
+
   return (
     <section
       dir='rtl'
@@ -32,18 +36,23 @@ export default function LandingPage() {
         />
       </div>
 
-      <div className='relative z-10 mx-3 lg:mx-20 px-1 lg:px-6 md:px-10  pb-0  '>
+      <div className='relative z-10 mx-3 lg:mx-20 px-1 lg:px-6 md:px-10 pb-0'>
         <div className='lg:grid grid-cols-1 flex flex-col-reverse lg:grid-cols-2 items-center'>
-          <div>
-            <h1
-              className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6  tracking-[0.2px] 
-    leading-[32px]'
-            >
-              بازار <span className='text-yellow-400'>طلا و سکه</span> در جیب شما
+          <div
+            className={`transition-all duration-[1000ms] ease-out
+              ${
+                showContent
+                  ? 'opacity-100 translate-x-0'
+                  : 'opacity-0 translate-x-20'
+              }
+            `}
+          >
+            <h1 className='text-[16px] text-center lg:text-right lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6 tracking-[0.2px] leading-[32px]'>
+              بازار <span className='text-yellow-400'>طلا و سکه</span> در جیب
+              شما
             </h1>
-            <h1  className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6  tracking-[0.2px] 
-    leading-[52px]'>
-              تنها با چند کلیک از سرمایه خود محافظت کنید .  با بهترین قیمت و در
+            <h1 className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6 tracking-[0.2px] leading-[52px] text-center lg:text-right'>
+              تنها با چند کلیک از سرمایه خود محافظت کنید. با بهترین قیمت و در
               سریع ترین زمان خرید و فروش کنید.
             </h1>
             <div className='lg:flex hidden items-center gap-3'>
@@ -58,14 +67,18 @@ export default function LandingPage() {
 
           <div className='flex items-center justify-end'>
             <div
-              className={`relative will-change-transform transition-all duration-2000 ease-out ${
-                loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-              }`}
+              className={`relative will-change-transform transition-all duration-[1200ms] ease-out
+                ${
+                  showContent
+                    ? 'opacity-100 scale-100 translate-y-0'
+                    : 'opacity-0 scale-50 translate-y-10'
+                }
+              `}
             >
               <img
                 src='/img/main.png'
                 alt=''
-                className='block relative rounded-[16px] w-32 lg:w-fit'
+                className='block relative rounded-[16px] w-64 lg:w-fit'
               />
             </div>
           </div>

@@ -19,6 +19,7 @@ type Bullion = {
 
 function BullionCard({ item }: { item: Bullion }) {
   const disabled = !item.is_active;
+  const ayar = item.name_fa.includes('پارسیس') ? '999.9' : '995';
 
   return (
     <div
@@ -41,7 +42,7 @@ function BullionCard({ item }: { item: Bullion }) {
             {item.name_fa}
           </div>
           <div className='text-[16px] lg:text-[14px] text-gray-600 leading-5'>
-            عیار 995
+            عیار {ayar}
           </div>
         </div>
 
@@ -149,7 +150,9 @@ export default function CardSection() {
                 setVisibleCount((c) => Math.min(c + 6, bullionItems.length));
               } else {
                 setVisibleCount(6);
-                bullionSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+                bullionSectionRef.current?.scrollIntoView({
+                  behavior: 'smooth',
+                });
               }
             }}
             className='flex items-center gap-2 text-[14px] px-4 py-2 border border-secondary-400 rounded-[16px] text-secondary-400'
@@ -158,7 +161,11 @@ export default function CardSection() {
               {hasMore ? 'نمایش بیشتر' : 'نمایش کمتر'}
             </p>
             <span>
-              {hasMore ? <MdOutlineKeyboardArrowDown /> : <MdOutlineKeyboardArrowUp />}
+              {hasMore ? (
+                <MdOutlineKeyboardArrowDown />
+              ) : (
+                <MdOutlineKeyboardArrowUp />
+              )}
             </span>
           </button>
         </div>
