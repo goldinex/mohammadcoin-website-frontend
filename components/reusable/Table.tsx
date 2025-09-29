@@ -221,7 +221,7 @@ export default function Table() {
       </div>
 
       <div className='mt-4'>
-        <div className='max-h-[550px] rounded-[15px] overflow-x-auto overflow-y-auto'>
+        <div className='max-h-none rounded-[15px] overflow-visible lg:max-h-[550px] lg:overflow-x-auto lg:overflow-y-auto'>
           <table className='w-full border-collapse text-[14px] lg:text-base'>
             <thead className='sticky top-0 bg-[#96A375] shadow rounded-t-8 z-10'>
               <tr className='bg-transparent text-gray-100 text-[14px]  lg:text-base'>
@@ -232,8 +232,10 @@ export default function Table() {
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت خرید (تومان)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت فروش (تومان)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>تغییرات (روزانه)</th>
-                <th className='py-2 px-1 sm:px-3 lg:px-5'>مشاهده نمودارها</th>
-                <th className='py-2 px-1 sm:px-3 lg:px-5'></th>
+                <th className='py-2 px-1 sm:px-3 lg:px-5 hidden lg:block'>
+                  مشاهده نمودارها
+                </th>
+                <th className='py-2 px-1 sm:px-3 lg:px-5 hidden lg:table-cell'></th>
               </tr>
             </thead>
             <tbody>
@@ -283,7 +285,7 @@ export default function Table() {
                       {r.changePct.toLocaleString('fa-IR')}%
                     </td>
 
-                    <td className='py-2 px-2 text-center'>
+                    <td className='py-2 px-2 text-center hidden lg:block'>
                       <img
                         src='/img/Presentation.svg'
                         alt='presentation'
@@ -298,7 +300,7 @@ export default function Table() {
                       />
                     </td>
 
-                    <td className='py-2 whitespace-normal min-w-[150px] text-center'>
+                    <td className='py-2 whitespace-normal min-w-[150px] text-center hidden lg:table-cell'>
                       <button
                         className={`lg:px-6 px-2  py-2 text-[14px]  rounded-[16px] border ${
                           r.is_special_price
