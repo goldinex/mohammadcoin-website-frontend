@@ -19,7 +19,6 @@ type Product = {
 const imageMap: Record<string, string> = {
   seke: '/img/seke.png',
   parsian: '/img/parsian.svg',
-
   azadi: '/img/azadi.png',
   milad: '/img/milad.png',
   roz: '/img/roz.png',
@@ -96,6 +95,18 @@ export default function Table() {
     shemsh: '/img/shemsh/default.svg',
   };
 
+  // آرایه ترتیب سکه‌ها
+  const priorityOrder = [
+    'تمام امامی',
+    'تمام بهار آزادی',
+    'نیم بهار آزادی',
+    'ربع بهار آزادی',
+    'سکه یک گرمی',
+    'امامی قبل ۸۶',
+    'نیم قبل ۸۶',
+    'ربع قبل ۸۶',
+  ];
+
   const rows = useMemo(() => {
     const data = products ?? [];
     let cat = '';
@@ -107,8 +118,21 @@ export default function Table() {
     let filtered = data.filter((p) => p.category === cat);
     if (showSpecialOnly) filtered = filtered.filter((p) => p.is_special_price);
 
+    // مرتب‌سازی سکه‌ها
+    if (cat === 'seke') {
+      filtered = filtered.sort((a, b) => {
+        const indexA = priorityOrder.findIndex((name) =>
+          a.name_fa.includes(name)
+        );
+        const indexB = priorityOrder.findIndex((name) =>
+          b.name_fa.includes(name)
+        );
+        return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
+      });
+    }
+
     return filtered.map((p) => {
-      const normalized = p.name_en?.toLowerCase() || '';
+      const normalized = (p as any).name_en?.toLowerCase() || '';
       const keys = categoryKeys[cat] || [];
       let key = keys.find((k) => normalized.includes(k));
       const image = key ? imageMap[key] : defaultImages[cat];
@@ -121,14 +145,6 @@ export default function Table() {
       };
     });
   }, [products, tab, showSpecialOnly]);
-
-  const nowFa = useMemo(
-    () =>
-      new Intl.DateTimeFormat('fa-IR', { dateStyle: 'short' }).format(
-        new Date()
-      ),
-    []
-  );
 
   const updatedAt = useMemo(() => {
     if (!products || products.length === 0) return { date: '', time: '' };
@@ -146,6 +162,7 @@ export default function Table() {
       </div>
     );
   }
+
   return (
     <div dir='rtl' className='w-full px-2 sm:px-4 lg:px-16 mt-10 sm:mt-20'>
       <div className='flex justify-center lg:my-6 my-12 w-full'>
@@ -228,7 +245,6 @@ export default function Table() {
                 <th className='py-4 lg:pr-20 text-right px-1 sm:px-3 lg:px-5 min-w-[150px]'>
                   بازار
                 </th>
-
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت خرید (تومان)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>قیمت فروش (تومان)</th>
                 <th className='py-2 px-1 sm:px-3 lg:px-5'>تغییرات (روزانه)</th>
