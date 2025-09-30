@@ -6,7 +6,7 @@ import { IoMail } from 'react-icons/io5';
 export default function Footer() {
 
   return (
-    <footer dir='rtl' className='w-full text-secondary-800 px-3 lg:px-6 mt-12'>
+    <footer id='support' dir='rtl' className='w-full text-secondary-800 px-3 lg:px-6 mt-12'>
       <div className='bg-secondary-400 rounded-[10px] px-12 md:px-24 py-6 md:py-8'>
         <div className='flex flex-col lg:flex-row  items-center justify-between border-b border-[#959d7d] pb-3'>
           <div className='flex items-center bg-[#4d5633] rounded-[8px] pl-3'>
@@ -64,11 +64,6 @@ export default function Footer() {
                   className='hover:text-yellow-600 transition'
                 >
                   ورود به پنل
-                </a>
-              </li>
-              <li>
-                <a href='/about' className='hover:text-yellow-600 transition'>
-                  پشتیبانی
                 </a>
               </li>
             </ul>

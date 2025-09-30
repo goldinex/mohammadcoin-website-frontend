@@ -14,6 +14,7 @@ type Product = {
   is_special_price?: boolean;
   is_active?: boolean;
   buy_price_change_percent?: number;
+  shamsi_updated_at?: string;
 };
 
 const imageMap: Record<string, string> = {
@@ -67,7 +68,6 @@ const SparkLine = memo(SparkLineComponent);
 export default function Table() {
   const [showSpecialOnly, setShowSpecialOnly] = useState(false);
   const [tab, setTab] = useState<'coin' | 'parsian' | 'shemsh'>('coin');
-  const [skip, setSkip] = useState(true);
   const {
     data: products,
     isLoading,
@@ -78,10 +78,6 @@ export default function Table() {
   });
 
   const router = useRouter();
-
-  React.useEffect(() => {
-    setSkip(false);
-  }, []);
 
   const categoryKeys: Record<string, string[]> = {
     seke: ['seke'],
@@ -95,7 +91,6 @@ export default function Table() {
     shemsh: '/img/shemsh/default.svg',
   };
 
-  // آرایه ترتیب سکه‌ها
   const priorityOrder = [
     'تمام امامی',
     'تمام بهار آزادی',
@@ -118,7 +113,6 @@ export default function Table() {
     let filtered = data.filter((p) => p.category === cat);
     if (showSpecialOnly) filtered = filtered.filter((p) => p.is_special_price);
 
-    // مرتب‌سازی سکه‌ها
     if (cat === 'seke') {
       filtered = filtered.sort((a, b) => {
         const indexA = priorityOrder.findIndex((name) =>
@@ -155,6 +149,14 @@ export default function Table() {
     return { date, time };
   }, [products]);
 
+  const gold18Price = useMemo(() => {
+    if (!products) return null;
+    const gold18 = products.find(
+      (p) =>
+        p.name_fa.includes('۱۸ عیار') );
+    return gold18?.latest_buy_price ?? null;
+  }, [products]);
+
   if (isLoading) {
     return (
       <div className='flex items-center justify-center p-4 text-gray-500'>
@@ -165,42 +167,15 @@ export default function Table() {
 
   return (
     <div dir='rtl' className='w-full px-2 sm:px-4 lg:px-16 mt-10 sm:mt-20'>
-      <div className='flex justify-center lg:my-6 my-12 w-full'>
-        <div className='flex w-[60%] sm:w-[60%] lg:w-[30%] items-center justify-center bg-primary-400 border border-primary-400 rounded-[10px] px-2 py-1 lg:py-2'>
-          <button
-            type='button'
-            onClick={() => setTab('coin')}
-            className={`${
-              tab === 'coin' ? 'bg-white shadow' : ''
-            } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
-          >
-            سکه
-          </button>
-          <button
-            type='button'
-            onClick={() => setTab('parsian')}
-            className={`${
-              tab === 'parsian' ? 'bg-white shadow' : ''
-            } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
-          >
-            پارسیان
-          </button>
-          <button
-            type='button'
-            onClick={() => setTab('shemsh')}
-            className={`${
-              tab === 'shemsh' ? 'bg-white shadow' : ''
-            } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
-          >
-            شمش
-          </button>
-        </div>
-      </div>
-
-      <div className='flex flex-row items-start sm:items-center justify-between mb-3 gap-2 sm:gap-0'>
+      <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2'>
         <h2 className='text-[12px] sm:text-base lg:text-xl font-semibold text-gray-800'>
           قیمت لحظه ای
         </h2>
+        {gold18Price && (
+          <div className='text-[12px] sm:text-sm lg:text-base font-medium text-gray-700'>
+            قیمت گرم طلا ۱۸ عیار: {gold18Price.toLocaleString('fa-IR')} تومان
+          </div>
+        )}
         <div className='flex items-center gap-2 sm:gap-4'>
           <button
             onClick={() => setShowSpecialOnly((prev) => !prev)}
@@ -237,6 +212,7 @@ export default function Table() {
         </div>
       </div>
 
+      {/* جدول */}
       <div className='mt-4'>
         <div className='max-h-none rounded-[15px] overflow-visible lg:max-h-[550px] lg:overflow-x-auto lg:overflow-y-auto'>
           <table className='w-full border-collapse text-[14px] lg:text-base'>

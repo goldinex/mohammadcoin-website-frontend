@@ -13,7 +13,7 @@ const links = [
   { href: '/#pricesTable', label: 'قیمت لحظه‌ای' },
   { href: '/about', label: 'درباره ی ما' },
   { href: '/#faq', label: 'سوالات متداول' },
-  { href: '#', label: 'پشتیبانی' },
+  { href: '/#support', label: 'پشتیبانی' },
 ];
 
 export default function Navbar() {

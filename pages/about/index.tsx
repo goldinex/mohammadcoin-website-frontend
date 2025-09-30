@@ -13,8 +13,8 @@ export default function Index() {
       </div>
 
       <div className='hidden lg:flex justify-center mt-10'>
-        <div className="relative w-[83%] h-[125vh] bg-[url('/img/bg.png')] bg-cover bg-center">
-          <div className='absolute top-1/4 left-3/4 transform -translate-x-1/2 w-11/12 md:w-2/3 lg:w-1/2 px-4 md:px-8'>
+        <div className="relative w-[73%] h-[185vh] bg-[url('/img/bg.png')] bg-cover bg-center">
+          <div className='absolute top-[20%] left-3/4 transform -translate-x-1/2 w-11/12 md:w-2/3 lg:w-1/2 px-4 md:px-8'>
             <p className='text-[18px] text-[#1C2B36]'>
               سکه محمد میراث‌دار ۳۵ سال سابقه درخشان در بازار طلا است جایی که
               مدیران مجموعه ،اقایان محمد طرشتی نژاد و محمد حسن حسینمردی پس از
@@ -44,13 +44,37 @@ export default function Index() {
               <HiOutlineLocationMarker size={30} className='ml-3' />
               <p className='m-0 text-[18px]'>
                 {' '}
-                آدرس: صادقیه - بلوار شهدای صادقیه - خیابان ستارخان - زرناب -
-                پلاک : -1144.0 - طبقه : همکف - واحد : 1
+                آدرس شعبه ۱: تهران، بین فلکه اول و دوم صادقیه، نبش مجتمع تجاری
+                زرناب، پلاک ۱
               </p>
             </div>
-            <div className='flex mt-10 items-start'>
+            <div className='flex mt-2 items-start'>
               <FaPhone className='ml-3' />
-              <p className='text-[18px]'>09939409692</p>
+              <p className='text-[18px]'>021-46142091</p>
+            </div>
+            <div className='flex mt-10 items-start'>
+              <HiOutlineLocationMarker size={30} className='ml-3' />
+              <p className='m-0 text-[18px]'>
+                {' '}
+                آدرس شعبه ۲: صادقیه-بین فلکه اول و دوم-پاساژ کیمیا-طبقه زیرین
+                -پلاک۶
+              </p>
+            </div>
+            <div className='flex mt-2 items-start'>
+              <FaPhone className='ml-3' />
+              <p className='text-[18px]'>021-44227655</p>
+            </div>
+            <div className='flex mt-10 items-start'>
+              <HiOutlineLocationMarker size={30} className='ml-3' />
+              <p className='m-0 text-[18px]'>
+                {' '}
+                آدرس شعبه ۳: صادقیه -بین فلکه اول و دوم-پاساژ زرناب -طبقه منفی
+                یک- پلاک b2
+              </p>
+            </div>
+            <div className='flex mt-2 items-start'>
+              <FaPhone className='ml-3' />
+              <p className='text-[18px]'>021-46142267</p>
             </div>
           </div>
         </div>
@@ -58,7 +82,7 @@ export default function Index() {
 
       <div className='lg:hidden flex justify-center mt-10'>
         <div className="relative w-full h-[70vh] bg-[url('/img/bg-mob.png')] bg-cover bg-center">
-          <div className='absolute top-1/3 left-2/4 transform -translate-x-1/2 w-11/12 md:w-2/3 lg:w-1/2 px-4 md:px-8'>
+          <div className='absolute top-[2%] left-[65%] transform -translate-x-1/2 w-8/12 md:w-2/3 lg:w-1/2 px-4 md:px-8'>
             <p className='text-[10px] text-[#1C2B36]'>
               سکه محمد میراث‌دار ۳۵ سال سابقه درخشان در بازار طلا است جایی که
               مدیران مجموعه ،اقایان محمد طرشتی نژاد و محمد حسن حسینمردی پس از
@@ -84,17 +108,41 @@ export default function Index() {
               با تیم کارشناسان باتجربه ما، در مسیر سرمایه‌گذاری خود تنها نخواهید
               بود؛ امروز با اطمینان کامل به جمع مشتریان سکه محمد بپیوندید.
             </p>
+            <div className='flex mt-5 items-start'>
+              <HiOutlineLocationMarker size={30} className='ml-3' />
+              <p className='m-0 text-[10px]'>
+                {' '}
+                آدرس شعبه ۱: تهران، بین فلکه اول و دوم صادقیه، نبش مجتمع تجاری
+                زرناب، پلاک ۱
+              </p>
+            </div>
+            <div className='flex mt-2 items-start'>
+              <FaPhone className='ml-3' />
+              <p className='text-[10px]'>021-46142091</p>
+            </div>
             <div className='flex mt-10 items-start'>
               <HiOutlineLocationMarker size={30} className='ml-3' />
               <p className='m-0 text-[10px]'>
                 {' '}
-                آدرس: صادقیه - بلوار شهدای صادقیه - خیابان ستارخان - زرناب -
-                پلاک : -1144.0 - طبقه : همکف - واحد : 1
+                آدرس شعبه ۲: صادقیه-بین فلکه اول و دوم-پاساژ کیمیا-طبقه زیرین
+                -پلاک۶
               </p>
             </div>
-            <div className='flex mt-10 items-start'>
+            <div className='flex mt-2 items-start'>
               <FaPhone className='ml-3' />
-              <p className='text-[10px]'>09939409692</p>
+              <p className='text-[10px]'>021-44227655</p>
+            </div>
+            <div className='flex mt-10 items-start'>
+              <HiOutlineLocationMarker size={30} className='ml-3' />
+              <p className='m-0 text-[10px]'>
+                {' '}
+                آدرس شعبه ۳: صادقیه -بین فلکه اول و دوم-پاساژ زرناب -طبقه منفی
+                یک- پلاک b2
+              </p>
+            </div>
+            <div className='flex mt-2 items-start'>
+              <FaPhone className='ml-3' />
+              <p className='text-[10px]'>021-46142267</p>
             </div>
           </div>
         </div>
