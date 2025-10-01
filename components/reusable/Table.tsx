@@ -167,7 +167,33 @@ export default function Table() {
 
   return (
     <div dir='rtl' className='w-full px-2 sm:px-4 lg:px-16 mt-10 sm:mt-20'>
-      <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2'>
+      <div className='flex justify-center lg:my-6 my-12 w-full'>
+        <div className='flex w-[60%] sm:w-[60%] lg:w-[30%] items-center justify-center bg-primary-400 border border-primary-400 rounded-[10px] px-2 py-1 lg:py-2'>
+          <button
+            type='button'
+            onClick={() => setTab('coin')}
+            className={`${tab === 'coin' ? 'bg-white shadow' : ''} w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
+          >
+            سکه
+          </button>
+          <button
+            type='button'
+            onClick={() => setTab('parsian')}
+            className={`${tab === 'parsian' ? 'bg-white shadow' : ''} w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
+          >
+            پارسیان
+          </button>
+          <button
+            type='button'
+            onClick={() => setTab('shemsh')}
+            className={`${tab === 'shemsh' ? 'bg-white shadow' : ''} w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
+          >
+            شمش
+          </button>
+        </div>
+      </div>
+
+      <div className='flex flex-row sm:items-center sm:justify-between mb-3 gap-2'>
         <h2 className='text-[12px] sm:text-base lg:text-xl font-semibold text-gray-800'>
           قیمت لحظه ای
         </h2>
