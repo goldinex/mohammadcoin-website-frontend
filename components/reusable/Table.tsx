@@ -151,9 +151,7 @@ export default function Table() {
 
   const gold18Price = useMemo(() => {
     if (!products) return null;
-    const gold18 = products.find(
-      (p) =>
-        p.name_fa.includes('۱۸ عیار') );
+    const gold18 = products.find((p) => p.name_fa.includes('۱۸ عیار'));
     return gold18?.latest_buy_price ?? null;
   }, [products]);
 
@@ -172,40 +170,46 @@ export default function Table() {
           <button
             type='button'
             onClick={() => setTab('coin')}
-            className={`${tab === 'coin' ? 'bg-white shadow' : ''} w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
+            className={`${
+              tab === 'coin' ? 'bg-white shadow' : ''
+            } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
           >
             سکه
           </button>
           <button
             type='button'
             onClick={() => setTab('parsian')}
-            className={`${tab === 'parsian' ? 'bg-white shadow' : ''} w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
+            className={`${
+              tab === 'parsian' ? 'bg-white shadow' : ''
+            } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
           >
             پارسیان
           </button>
           <button
             type='button'
             onClick={() => setTab('shemsh')}
-            className={`${tab === 'shemsh' ? 'bg-white shadow' : ''} w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
+            className={`${
+              tab === 'shemsh' ? 'bg-white shadow' : ''
+            } w-1/2 py-2 lg:py-2 rounded-[8px] text-xs sm:text-sm text-gray-700`}
           >
             شمش
           </button>
         </div>
       </div>
 
-      <div className='flex flex-row sm:items-center sm:justify-between mb-3 gap-2'>
-        <h2 className='text-[12px] sm:text-base lg:text-xl font-semibold text-gray-800'>
+      <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2'>
+        <h2 className='text-[16px] lg:text-xl font-semibold text-gray-800'>
           قیمت لحظه ای
         </h2>
         {gold18Price && (
-          <div className='text-[12px] sm:text-sm lg:text-base font-medium text-gray-700'>
+          <div className='text-[16px] lg:text-base font-medium text-gray-700'>
             قیمت گرم طلا ۱۸ عیار: {gold18Price.toLocaleString('fa-IR')} تومان
           </div>
         )}
-        <div className='flex items-center gap-2 sm:gap-4'>
+        <div className='flex justify-between items-center gap-2 sm:gap-4'>
           <button
             onClick={() => setShowSpecialOnly((prev) => !prev)}
-            className={`text-[10px] sm:text-xs lg:text-sm rounded-[16px] border px-2 sm:px-4 py-1 transition ${
+            className={`text-[14px] sm:text-xs lg:text-sm rounded-[16px] border px-2 sm:px-4 py-1 transition ${
               showSpecialOnly
                 ? 'bg-[#F65555] text-white border-[#F65555]'
                 : 'text-[#E40E0E] border-[#F65555]'
@@ -214,7 +218,7 @@ export default function Table() {
             قیمت ویژه
           </button>
 
-          <div className='text-[9px] sm:text-xs flex items-center gap-2 text-gray-500'>
+          <div className='text-[12px] sm:text-xs flex items-center gap-2 text-gray-500'>
             <div className='flex flex-col'>
               <span>
                 آخرین بروزرسانی:
