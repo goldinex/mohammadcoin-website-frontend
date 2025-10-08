@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>سکه محمد| خرید و فروش سکه و شمش در تهران</title>
+        <title>سکه محمد | خرید و فروش سکه و شمش در تهران</title>
 
         <meta
           name='description'
