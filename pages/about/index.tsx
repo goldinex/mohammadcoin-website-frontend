@@ -1,10 +1,75 @@
 import React from 'react';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
+import Head from 'next/head';
 import { FaPhone } from 'react-icons/fa';
 
 export default function Index() {
+  const branchesSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'سکه محمد - شعبه 1',
+      image: 'https://www.sekemohammad.com/logo.svg',
+      url: 'https://www.sekemohammad.com/',
+      telephone: '+98-21-46142091',
+      email: 'info@sekehmohammad.com',
+      description:
+        'پلتفرم سکه محمد مرجع آنلاین خرید و فروش طلا، سکه و شمش با بالاترین شفافیت و امنیت در ایران است.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress:
+          'تهران، بین فلکه اول و دوم صادقیه، نبش مجتمع تجاری زرناب، پلاک ۱',
+        addressLocality: 'Tehran',
+        addressCountry: 'IR',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'سکه محمد - شعبه 2',
+      image: 'https://www.sekemohammad.com/logo.svg',
+      url: 'https://www.sekemohammad.com/',
+      telephone: '+98-21-44227655',
+      email: 'info@sekehmohammad.com',
+      description: 'شعبه سکه محمد برای خرید و فروش سکه و طلا در صادقیه تهران.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress:
+          'تهران، صادقیه، بین فلکه اول و دوم، پاساژ کیمیا، طبقه زیرین، پلاک ۶',
+        addressLocality: 'Tehran',
+        addressCountry: 'IR',
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: 'سکه محمد - شعبه  3',
+      image: 'https://www.sekemohammad.com/logo.svg',
+      url: 'https://www.sekemohammad.com/',
+      telephone: '+98-21-46142267',
+      email: 'info@sekehmohammad.com',
+      description: 'شعبه سکه محمد در پاساژ زرناب جهت خرید و فروش سکه و شمش.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress:
+          'تهران، صادقیه، بین فلکه اول و دوم، پاساژ زرناب، طبقه منفی یک، پلاک B2',
+        addressLocality: 'Tehran',
+        addressCountry: 'IR',
+      },
+    },
+  ];
+
   return (
     <div className='bg-[#fffffb]'>
+      <Head>
+        <title>درباره سکه محمد| پلتفرم خرید و فروش امن سکه وشمش</title>
+        <meta
+          name='description'
+          content='سکه محمد؛ مرجع امن خرید و فروش طلا و سکه. ارائه مشاوره رایگان سرمایه‌گذاری، نرخ لحظه‌ای، نمودار و مقایسه قیمت‌ها با ارسال سریع و مطمئن سفارش‌ها.'
+        />
+        <link rel='canonical' href='https://www.sekemohammad.com/about' />
+        <meta name='robots' content='index, follow' />
+      </Head>
       <div className='relative flex mt-10 justify-center mx-auto w-full'>
         <img src='/img/border.svg' alt='' />
         <p className='absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[13px] lg:text-[26px] text-black font-bold'>
