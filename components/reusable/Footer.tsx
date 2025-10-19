@@ -16,7 +16,7 @@ export default function Footer() {
             <>
               <FaPhone className='text-secondary-800' />
             </>
-            <span>09939409692</span>
+            <span>09120993417</span>
           </div>
           <div className='flex items-center gap-2 text-[13px] text-secondary-800'>
             <IoMail className='text-secondary-800' />
