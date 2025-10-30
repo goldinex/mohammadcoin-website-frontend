@@ -132,7 +132,7 @@ export default function Footer() {
           کپی‌برداری پیگرد قانونی دارد.{' '}
         </p>
         <span className='text-[6px] lg:text-[12px]'>
-          <a href='https://goldinex.org'> ساخته شده توسط تیم گلدینکس</a>
+          <a href='https://goldihub.org'> ساخته شده توسط تیم گلدی‌هاب</a>
         </span>
       </div>
     </footer>
