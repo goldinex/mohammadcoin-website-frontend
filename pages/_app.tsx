@@ -28,10 +28,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Head>
-        <title>سکه محمد</title>
+        {/* Title حرفه‌ای */}
+        <title>سکه محمد | خرید و فروش سکه و طلا</title>
 
+        {/* Favicon */}
         <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='icon' type='image/png' sizes='48x48' href='/favicon.svg' />
+
+        {/* Google Analytics */}
         <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-Q2TGZLNZQG'
@@ -39,15 +43,46 @@ export default function App({ Component, pageProps }: AppProps) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-Q2TGZLNZQG');
-      `,
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q2TGZLNZQG');
+          `,
           }}
         />
-      </Head>
 
+        {/* Schema WebSite */}
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              url: 'https://sekemohammad.com',
+              name: 'سکه محمد',
+            }),
+          }}
+        />
+
+        {/* Schema Organization */}
+        <script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'سکه محمد',
+              url: 'https://sekemohammad.com',
+              logo: 'https://sekemohammad.com/logo.png',
+              image: 'https://sekemohammad.com/img/shopdata.png',
+            }),
+          }}
+        />
+
+        {/* Open Graph */}
+        <meta property='og:site_name' content='سکه محمد' />
+        <meta property='og:title' content='سکه محمد | خرید و فروش سکه و طلا' />
+      </Head>
       <Toaster
         toastOptions={{
           duration: 4000,
