@@ -14,8 +14,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const isHome = router.pathname === '/';
 
   const withLayout = (
-    <div className="w-full min-h-[100dvh] flex bg-white">
-      <div className="flex-1 min-h-[100dvh] overflow-y-auto">
+    <div className='w-full min-h-[100dvh] flex bg-white'>
+      <div className='flex-1 min-h-[100dvh] overflow-y-auto'>
         {!isHome && <Navbar />}
         <main className={isHome ? '' : 'p-4 md:px-8'}>
           <Component {...pageProps} />
@@ -28,8 +28,24 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Head>
-        <link rel="icon" href="/favicon.svg" />
         <title>سکه محمد</title>
+
+        <link rel='icon' href='/favicon.ico' sizes='any' />
+        <link rel='icon' type='image/png' sizes='48x48' href='/favicon.svg' />
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=G-Q2TGZLNZQG'
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Q2TGZLNZQG');
+      `,
+          }}
+        />
       </Head>
 
       <Toaster

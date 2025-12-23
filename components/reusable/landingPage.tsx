@@ -51,10 +51,10 @@ export default function LandingPage() {
               بازار <span className='text-yellow-400'>طلا و سکه</span> در جیب
               شما
             </h1>
-            <h1 className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6 tracking-[0.2px] leading-[52px] text-center lg:text-right'>
+            <h2 className='text-[16px] lg:w-[88%] w-full lg:text-[26px] font-bold text-secondary-900 mb-6 tracking-[0.2px] leading-[52px] text-center lg:text-right'>
               تنها با چند کلیک از سرمایه خود محافظت کنید. با بهترین قیمت و در
               سریع ترین زمان خرید و فروش کنید.
-            </h1>
+            </h2>
             <div className='lg:flex hidden items-center gap-3'>
               <a
                 href='https://app.sekemohammad.com'

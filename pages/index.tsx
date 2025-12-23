@@ -27,7 +27,6 @@ export default function Home() {
       <div className='p-0 bg-[linear-gradient(to_bottom,rgba(245,202,44,0.29)_0%,rgba(255,210,0,0)_100%)]'>
         <Navbar />
         <main>
-          <h1 className='sr-only'>بازار طلا و سکه در جیب شما </h1>
           <LandingPage />
         </main>
       </div>
