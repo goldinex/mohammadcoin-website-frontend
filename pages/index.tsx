@@ -40,7 +40,7 @@ export default function Home() {
           content='خرید و فروش سکه و شمش طلا با بهترین قیمت روز. مشاهده قیمت لحظه‌ای طلا و انجام معاملات آسان در سکه محمد همین حالا قیمت را بررسی کنید.'
         />
 
-        <link rel='canonical' href='https://www.sekemohammad.com/' />
+        <link rel='canonical' href='https://sekemohammad.com/' />
         <meta name='robots' content='index, follow' />
       </Head>
 

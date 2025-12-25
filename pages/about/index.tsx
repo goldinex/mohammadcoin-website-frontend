@@ -67,7 +67,7 @@ export default function Index() {
           name='description'
           content='سکه محمد؛ مرجع امن خرید و فروش طلا و سکه. ارائه مشاوره رایگان سرمایه‌گذاری، نرخ لحظه‌ای، نمودار و مقایسه قیمت‌ها با ارسال سریع و مطمئن سفارش‌ها.'
         />
-        <link rel='canonical' href='https://www.sekemohammad.com/about' />
+        <link rel='canonical' href='https://sekemohammad.com/about' />
         <meta name='robots' content='index, follow' />
       </Head>
       <div className='relative flex mt-10 justify-center mx-auto w-full'>
