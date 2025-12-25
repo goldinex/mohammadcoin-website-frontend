@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Banner() {
   return (
-    <section dir='rtl' className='w-full mt-8 lg:mt-12 mb-4'>
+    <section dir='rtl' className='w-full mt-8 lg:mt-12 mb-4 lg:min-h-[320px] min-h-[183px] '>
       <div className='bg-[#F3F5F0] rounded-[8px]overflow-x-hidden'>
         <div className='mx-auto max-w-5xl grid  grid-cols-2 items-center gap-6'>
           <div className='text-center md:text-right'>
@@ -18,7 +18,7 @@ export default function Banner() {
           <div className='flex items-center justify-end order-1 md:order-none'>
             <div className=' flex items-center justify-center'>
               <img
-                src='/img/banner.png'
+                src='/img/banner.svg'
                 alt='banner'
                 className='w-full lg:max-w-full lg:max-h-full object-contain'
               />

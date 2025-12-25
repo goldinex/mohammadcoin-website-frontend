@@ -28,14 +28,14 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Head>
-        {/* Title حرفه‌ای */}
         <title>سکه محمد | خرید و فروش سکه و طلا</title>
-
-        {/* Favicon */}
+        <meta
+          name='description'
+          content='خرید و فروش امن طلا و سکه با قیمت لحظه‌ای. معامله سکه پارسیان و شمش با بهترین نرخ، سریع و مطمئن.'
+        />
         <link rel='icon' href='/favicon.ico' sizes='any' />
         <link rel='icon' type='image/png' sizes='48x48' href='/favicon.svg' />
 
-        {/* Google Analytics */}
         <script
           async
           src='https://www.googletagmanager.com/gtag/js?id=G-Q2TGZLNZQG'
@@ -79,9 +79,42 @@ export default function App({ Component, pageProps }: AppProps) {
           }}
         />
 
-        {/* Open Graph */}
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:title'
+          content='خرید و فروش امن طلا و سکه با قیمت لحظه‌ای'
+        />
+        <meta
+          property='og:description'
+          content='معامله سکه پارسیان و شمش با نرخ لحظه‌ای. همین حالا شروع کن.'
+        />
+        <meta property='og:url' content='https://sekemohammad.com/' />
         <meta property='og:site_name' content='سکه محمد' />
-        <meta property='og:title' content='سکه محمد | خرید و فروش سکه و طلا' />
+
+        <meta
+          property='og:image'
+          content='https://sekemohammad.com/img/logoImg/logo-right.png'
+        />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
+        <meta
+          property='og:image:alt'
+          content='پلتفرم خرید و فروش آنلاین طلا و سکه سکه محمد'
+        />
+
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta
+          name='twitter:title'
+          content='خرید و فروش امن طلا و سکه با قیمت لحظه‌ای'
+        />
+        <meta
+          name='twitter:description'
+          content='معامله سکه پارسیان و شمش با نرخ لحظه‌ای. همین حالا شروع کن.'
+        />
+        <meta
+          name='twitter:image'
+          content='https://sekemohammad.com/img/og-image.jpg'
+        />
       </Head>
       <Toaster
         toastOptions={{

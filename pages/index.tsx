@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 import Navbar from '@/components/reusable/Navbar';
 import LandingPage from '@/components/reusable/landingPage';
 import BuySell from '@/components/reusable/BuySell';
@@ -10,6 +13,23 @@ import Guid from '@/components/reusable/Guid';
 import WhyUs from '@/components/reusable/WhyUs';
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!router.isReady) return;
+
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const el = document.getElementById(id);
+
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [router.isReady]);
+
   return (
     <div>
       <Head>

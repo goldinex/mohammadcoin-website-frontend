@@ -10,7 +10,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className='py-1 lg:py-16'>
+    <section className='py-1 lg:py-16 lg:min-h-[614px] min-h-[183px]'>
       <p className='text-[14px] lg:text-[18px] px-4 lg:px-28 mb-5'>
         در سکه محمد مرز های سنتی خرید طلارا شکسته ایم . ما یک پلتفرم ساده
         نیستیم،ما ضامن امنیت مالی شما در فضای دیجیتال هستیم . پس از تجربه شیرین
@@ -27,7 +27,7 @@ export default function HowItWorks() {
           </h2>
           <img
             className='flex w-full  lg:hidden'
-            src='/img/iPhonemobile.svg'
+            src='/img/iPhone.svg'
             alt=''
           />
           <ul className='space-y-6 pr-5'>

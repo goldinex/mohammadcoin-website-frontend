@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className='hidden lg:block'>
           <a
             href='https://app.sekemohammad.com'
-            className='bg-primary-300 text-[#0E171F] px-6 py-2 rounded-[16px] font-medium hover:bg-yellow-500'
+            className='bg-primary-300 text-[#0E171F] px-6 py-2 rounded-[16px] font-medium hover:bg-yellow-500 h-[38px]'
           >
             ورود و ثبت‌نام
           </a>

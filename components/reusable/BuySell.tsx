@@ -69,14 +69,14 @@ export default function CoinExchange() {
   }, [quantity, coinType, multiplier, mode, products]);
   if (isLoading || amount === null) {
     return (
-      <div className='flex items-center justify-center p-4 text-gray-500'>
+      <div className='flex items-center min-h-[354px] lg:min-h-[218px] justify-center p-4 text-gray-500'>
         در حال بارگذاری...
       </div>
     );
   }
 
   return (
-    <div className=' bg-white flex items-center justify-center p-4' dir='rtl'>
+    <div className=' bg-white flex items-center justify-center p-4  min-h-[354px] lg:min-h-[218px]' dir='rtl'>
       <div className='w-full max-w-5xl'>
         <div className='flex justify-center mx-auto w-[90%] lg:w-[60%]'>
           <div className='relative w-full'>

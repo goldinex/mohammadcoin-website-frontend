@@ -121,7 +121,7 @@ export default function CardSection() {
 
   if (isLoading) {
     return (
-      <div className='flex items-center justify-center p-4 text-gray-500'>
+      <div className='flex items-center lg:min-h-[693px] min-h-[1259px] justify-center p-4 text-gray-500'>
         در حال بارگذاری...
       </div>
     );
@@ -131,7 +131,7 @@ export default function CardSection() {
     <section
       dir='rtl'
       ref={bullionSectionRef}
-      className='w-full px-4 lg:px-16 mt-10 lg:mt-10 py-10'
+      className='w-full px-4 lg:px-16 mt-10 lg:mt-10 py-10 lg:min-h-[693px] min-h-[1259px]'
     >
       <h3 className='text-center text-[32px] font-semibold text-gray-800 mb-10'>
         شمش ها

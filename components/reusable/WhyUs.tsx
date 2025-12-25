@@ -43,7 +43,7 @@ export default function WhyUs() {
   ];
 
   return (
-    <section className='py-16 px-4 bg-white' dir='rtl'>
+    <section className='py-16 px-4 bg-white lg:min-h-[564px] min-h-[1140px]' dir='rtl'>
       <h2 className='text-center text-2xl md:text-3xl font-bold text-gray-800 mb-12'>
         چرا سکه محمد؟
       </h2>
